@@ -1,1 +1,4 @@
-/* pages/home/home.wxss */
+#myVideo {
+  width: 750rpx;
+  height: 420rpx;
+}

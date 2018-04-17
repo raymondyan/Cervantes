@@ -1,2 +1,3 @@
-<!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view class="movie">
+  <video id="myVideo" src="https://cloud.video.taobao.com//play/u/2066221067/p/1/e/6/t/1/50001688721.mp4" controls></video>
+</view>

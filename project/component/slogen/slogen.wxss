@@ -1,0 +1,11 @@
+.slogen {
+  display: flex;
+  font-size: 24rpx;
+  font-weight: 200;
+  justify-content: space-around;
+  height: 70rpx;
+  background-color: #000;
+  color: #EEE;
+  align-items: center;
+  border-bottom: 16rpx #EEE solid;
+}

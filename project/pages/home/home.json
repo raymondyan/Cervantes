@@ -1,3 +1,11 @@
 {
-  
+  "navigationBarBackgroundColor": "#dc2229",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "澳洲邮政海外购",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "index-slides": "../../component/indexSlides/indexSlides",
+    "slogen": "../../component/slogen/slogen"
+  }
 }

@@ -1,0 +1,5 @@
+<view class='slogen'>
+  <block wx:for="{{slogens}}" wx:key="index" wx:for-item="slogen">
+    <view>{{slogen}}</view>
+  </block>
+</view>

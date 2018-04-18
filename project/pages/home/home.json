@@ -6,6 +6,7 @@
   "backgroundTextStyle": "light",
   "usingComponents": {
     "index-slides": "../../component/indexSlides/indexSlides",
-    "slogen": "../../component/slogen/slogen"
+    "slogen": "../../component/slogen/slogen",
+    "product-section": "../../component/productSection/productSection"
   }
 }

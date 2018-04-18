@@ -1,19 +1,5 @@
-<wxs src="./price.wxs" module="price" />
 <view>
-  <index-slides slides="{{indexSlides}}"></index-slides>
+  <index-slides slides="{{indexSlides}}"/>
   <slogen/>
-
-  <view class='section'>
-    <view class='sectionTitle'>澳邮精选</view>
-    <view class="sectionTitleDivide" />
-    <view class='prodcutList'>
-      <view class='product' wx:for="{{auPostChoices}}" wx:key="index" wx:for-item="choice">
-        <image mode='aspectFill' src='{{choice.image}}'></image>
-        <view class='brand'>{{choice.brand}}</view>
-        <view class='name'>{{choice.name}}</view>
-        <view class='price'>{{price.formatPrice(choice.price)}}</view>
-      </view>
-    </view>
-  </view>
-
+  <product-section name="澳邮精选" products="{{auPostChoices}}"/>
 </view>

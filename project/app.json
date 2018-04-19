@@ -16,9 +16,21 @@
       },
       {
         "pagePath": "pages/home/home",
+        "iconPath": "./static/cate.png",
+        "selectedIconPath": "./static/cate_on.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "./static/au.png",
+        "selectedIconPath": "./static/au_on.png",
+        "text": "品质澳洲"
+      },
+      {
+        "pagePath": "pages/home/home",
         "iconPath": "./static/cart.png",
         "selectedIconPath": "./static/cart_on.png",
-        "text": "购物车"
+        "text": "购物篮"
       },
       {
         "pagePath": "pages/home/home",

@@ -2,6 +2,32 @@
   "pages":[
     "pages/home/home"
   ],
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#dc2229",
+    "borderStyle": "black",
+    "backgroundColor": "#000",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "./static/shop.png",
+        "selectedIconPath": "./static/shop_on.png",
+        "text": "精选"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "./static/cart.png",
+        "selectedIconPath": "./static/cart_on.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/home/home",
+       "iconPath": "./static/my.png",
+      "selectedIconPath": "./static/my_on.png",
+        "text": "我的"
+      }
+    ]
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",

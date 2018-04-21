@@ -16,55 +16,77 @@
   font-weight: 200;
 }
 
-.sectionTitleDivide {
-  content: " ";
-  height: 4rpx;
-  width: 30px;
-  background-color: #dc2229;
-  margin: 10rpx auto 40rpx;
-  border: 0;
+.brandSwiperSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.brandSwiperSection .brandItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350rpx;
+  height: 200rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.brandSwiperSection .brandItem:nth-child(odd){
+  border-right: 1px solid #eee;
+}
+
+.brandSwiperSection .brandItem:nth-child(1),
+.brandSwiperSection .brandItem:nth-child(2){
   border-top: 1px solid #eee;
 }
 
-.prodcutList {
+.brandSwiperSection image{
+  width: 80%;
+}
+
+.swiper-dots{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+} 
+
+.swiper-dot{
+    width: 15px;
+    height: 4px;
+    background: #000;
+    border-radius: 4px;
 }
 
-.product {
-  width: 30%;
+.swiper-dot-active{
+    background: #dc2229;
+    width: 20px;
+    transition: width 0.1s linear;
 }
 
-.product image {
-  width: 225rpx;
-  height: 225rpx;
+.swiper-dot:not(:last-child) {
+  margin-right: 15rpx;
 }
 
-.product .brand {
-  display: inline-block;
-  font-size: 20rpx;
-  background-color: #000;
-  color: white;
-  height: 26rpx;
-  line-height: 26rpx;
-  padding: 0 10rpx;
-  border-radius: 5rpx;
-}
-
-.product .name {
-  font-size: 28rpx;
-  color: #333;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  word-break: break-all;
-}
-
-.product .price {
-  font-size: 35rpx;
-  font-weight: 600;
+.more {
+  text-align: center;
   color: #dc2229;
+  font-size: 28rpx;
 }
 
+.more::after {
+  content: " ";
+  display: inline-block;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  height: 7px;
+  width: 7px;
+  border-width: 1px 1px 0 0;
+  border-color: #dc2229;
+  border-style: solid;
+  top: -1px;
+  position: relative;
+  margin-left: 0.3em;
+}

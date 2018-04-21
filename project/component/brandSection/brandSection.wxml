@@ -2,13 +2,25 @@
 <view class='section'>
   <view class='sectionTitle'>{{name}}</view>
   <view class='sectionEnTitle'>{{nameEn}}</view>
-  <view class="sectionTitleDivide" />
-  <view class='prodcutList'>
-    <view class='product' wx:for="{{products}}" wx:key="index" wx:for-item="product">
-      <image mode='aspectFill' src='{{product.image}}'></image>
-      <view class='brand'>{{product.brand}}</view>
-      <view class='name'>{{product.name}}</view>
-      <view class='price'>{{price.formatPrice(product.price)}}</view>
-    </view>
+  <view class='swiper-dots'>
+    <view class="{{ dot == current ? 'swiper-dot swiper-dot-active' : 'swiper-dot' }}" wx:for="{{dots}}" wx:for-item="dot"></view>
   </view>
+
+  <swiper class="swiper-box" style='height:630rpx;' indicator-color="#000" indicator-active-color="#dc2229" bindchange="changeSlides">
+    <swiper-item>
+      <view class='brandSwiperSection'>
+        <view class='brandItem' wx:for="{{sortedBrands[0]}}" wx:key="index" wx:for-item="brand">
+          <image mode='aspectFit' src='{{brand.image}}'></image>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class='brandSwiperSection'>
+        <view class='brandItem' wx:for="{{sortedBrands[1]}}" wx:key="index" wx:for-item="brand">
+          <image mode='aspectFit' src='{{brand.image}}'></image>
+        </view>
+        <view class='brandItem more'>{{more}}</view>
+      </view>
+    </swiper-item>
+  </swiper>
 </view>

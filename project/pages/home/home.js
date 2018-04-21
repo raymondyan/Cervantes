@@ -25,6 +25,64 @@ Page({
         brand: "sukin",
         price: 89
       },
+    ],
+    brands: [
+      {
+        name: "bioisland",
+        image: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1f9k5qFsttvcpbBU.jpg"
+      }, 
+      // {
+      //   name: "a2",
+      //   image: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1f9k5qXAQnfkgViy.png"
+      // },
+      {
+        name: "blackmores",
+        image: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1f9k5qpfHTfgwEUU.png"
+      },
+      {
+        name: "lifespace",
+        image: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1f9k5qVGSDVcuvQh.png"
+      },
+      {
+        name: "CCA",
+        image: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1f9k5qStRwoatOKh.jpg"
+      },
+      {
+        name: "sukin",
+        image: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1f9k5qfXkuxYLClj.png"
+      },
+      {
+        name: "goat",
+        image: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1f9k5qgLRjMrlxjN.png"
+      },
+      {
+        name: "nulax",
+        image: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1f9k5qZpCveprNEz.png"
+      },
+      {
+        name: "natio",
+        image: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1f9k5qPSatZjnMGS.png"
+      },
+      {
+        name: "naturesway",
+        image: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1f9k5qGvyWcEGWam.png"
+      },
+      // {
+      //   name: "egoqv",
+      //   image: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1f9k5qMdkINzyxvM.jpg"
+      // },
+      {
+        name: "voost",
+        image: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1f9k5qCDQNinOvyb.png"
+      },
+      {
+        name: "swisse",
+        image: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1f9k5qlaagQCrDHk.png"
+      }
+      // {
+      //   name: "thursdayplantation",
+      //   image: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1f9k5qaCLwchsbFt.jpg"
+      // },
     ]
   }
 })

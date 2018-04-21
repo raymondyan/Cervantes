@@ -43,6 +43,12 @@ Page({
     ],
   },
 
+  goToHome: function(){
+    wx.switchTab({
+      url: '../../pages/home/home',
+    })
+  },
+
   onLoad: function (options) {
     let scope = this;
     wx.getStorage({

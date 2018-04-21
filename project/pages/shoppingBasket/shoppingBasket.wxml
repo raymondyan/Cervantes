@@ -1,6 +1,6 @@
 <view>
   <view bindtap='goToDeliveryIntro' class='deliveryAndChange'>查看物流和退换货说明</view>
-  <view wx:if="{{empty}}" class='emptyCart'>
+  <view wx:if="{{empty}}" class='emptyCart' bindtap='goToHome'>
     <image class='emptyCartImg' src='../../static/cart_empty.png'></image>
     <view class='greeting'>好物已甄选 可前往选购</view>
   </view>

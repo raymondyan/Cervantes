@@ -1,12 +1,12 @@
 <view class='swiperBox'>
-  <swiper bindchange="changeSlides" circular="true" autoplay="true" interval="4000">
+  <swiper indicator-dots="true" indicator-color="#000" indicator-active-color="#dc2229" bindchange="changeSlides" circular="true" autoplay="true" interval="4000">
     <block wx:for="{{slides}}" wx:key="index" wx:for-item="slideLink">
       <swiper-item>
         <image mode='aspectFill' src="{{slideLink}}" class="slide-image" />
       </swiper-item>
     </block>
   </swiper>
-  <view class='counter'>
+  <!-- <view class='counter'>
     {{current+1}} / {{itemCount}}
-  </view>
+  </view> -->
 </view>

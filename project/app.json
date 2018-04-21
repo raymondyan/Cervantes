@@ -1,6 +1,8 @@
 {
   "pages":[
-    "pages/home/home"
+    "pages/home/home",
+    "pages/shoppingBasket/shoppingBasket",
+    "pages/my/my"
   ],
   "tabBar": {
     "color": "#bfbfbf",
@@ -27,13 +29,13 @@
         "text": "品质澳洲"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/shoppingBasket/shoppingBasket",
         "iconPath": "./static/cart.png",
         "selectedIconPath": "./static/cart_on.png",
         "text": "购物篮"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/my/my",
        "iconPath": "./static/my.png",
       "selectedIconPath": "./static/my_on.png",
         "text": "我的"

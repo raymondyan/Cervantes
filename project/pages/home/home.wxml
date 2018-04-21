@@ -7,4 +7,5 @@
   
   <brand-collection collection="{{nairCollection}}" />
   <brand-collection collection="{{liverAndStomachCollection}}" />
+  <view class='copyright'> Powered By Spear & Windmill Studio</view>
 </view>

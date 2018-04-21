@@ -1,5 +1,6 @@
 .section {
-  border-bottom: 16rpx #eee solid;
+  border-top: 20rpx #eee solid;
+  border-bottom: 1px #cdcdcd solid;
   padding: 30rpx 0 30rpx;
 }
 

@@ -1,0 +1,8 @@
+<view>
+  <view bindtap='goToDeliveryIntro' class='deliveryAndChange'>查看物流和退换货说明</view>
+  <view wx:if="{{empty}}" class='emptyCart'>
+    <image class='emptyCartImg' src='../../static/cart_empty.png'></image>
+    <view class='greeting'>好物已甄选 可前往选购</view>
+  </view>
+   <product-section name="澳邮精选" nameEn="AuPost Featured" more="更多精选" products="{{auPostChoices}}" />
+</view>

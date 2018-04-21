@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "购物篮",
+  "backgroundColor": "#eee",
+  "usingComponents": {
+    "product-section": "../../component/productSection/productSection"
+  }
+}

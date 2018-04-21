@@ -2,7 +2,8 @@
   "pages":[
     "pages/home/home",
     "pages/shoppingBasket/shoppingBasket",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/lifestyle/lifestyle"
   ],
   "tabBar": {
     "color": "#bfbfbf",
@@ -23,7 +24,7 @@
         "text": "分类"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/lifestyle/lifestyle",
         "iconPath": "./static/au.png",
         "selectedIconPath": "./static/au_on.png",
         "text": "品质澳洲"

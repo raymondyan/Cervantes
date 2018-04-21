@@ -1,0 +1,39 @@
+<wxs src="../utils/price.wxs" module="price" />
+<view class='collection'>
+  <view class='collectionHeader'>
+    <view class='collectionTitle'>{{collection.title}}</view>
+    <view class='swiper-dots'>
+      <view class="{{ dot == current ? 'swiper-dot swiper-dot-active' : 'swiper-dot' }}" wx:for="{{dots}}" wx:for-item="dot" wx:key="index">
+      </view>
+    </view>
+  </view>
+
+  <swiper class="swiper-box" style='height:400rpx;' bindchange="changeSlides">
+    <swiper-item>
+      <view class='brandSwiperSection'>
+        <image class='cover' mode='aspectFill' src='{{collection.coverImg}}'></image>
+      </view>
+    </swiper-item>
+
+    <view class='brandSwiperSection'>
+      <block wx:for="{{collection.products}}" wx:key="index" wx:for-item="product">
+        <swiper-item>
+          <view class="product">
+            <image class='image' mode='aspectFit' src='{{product.image}}'></image>
+            <view class='detail'>
+              <view wx:if="{{product.tag}}" class='tag'># {{product.tag}}</view>
+              <view class='name'>{{product.name}}</view>
+              <view class='priceBlock'>
+                <view class='price'>{{price.formatPrice(product.price)}}</view>
+                <view class='priceOld'>{{price.formatPrice(product.priceOld)}}</view>
+              </view>
+              <view class='purchaseBtn'>选购</view>
+            </view>
+          </view>
+
+        </swiper-item>
+      </block>
+    </view>
+
+  </swiper>
+</view>

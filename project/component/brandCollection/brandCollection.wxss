@@ -1,0 +1,140 @@
+.collection {
+  border-bottom: 16rpx #eee solid;
+  padding: 30rpx 0 30rpx;
+}
+
+.collectionHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collectionTitle {
+  padding-left: 20rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.brandSwiperSection .cover {
+  padding: 20rpx 0 20rpx 20rpx;
+  width: 710rpx;
+  height: 500rpx;
+}
+
+.brandSwiperSection .product {
+  display: flex;
+  align-items: center;
+  padding-top: 60rpx;
+}
+
+.brandSwiperSection .product .image {
+  width: 300rpx;
+  height: 300rpx;
+  margin-left: 20rpx;
+}
+
+.brandSwiperSection .product .detail {
+  width: 400rpx;
+  padding-left: 20rpx;
+}
+
+.brandSwiperSection .product .tag {
+  display: inline-block;
+  font-size: 26rpx;
+  padding: 0 20rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  color: #fff;
+  background-color: #000;
+}
+
+.brandSwiperSection .product .name {
+  font-size: 36rpx;
+  color: #222;
+  font-weight: 300;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-all;
+  padding-top: 10rpx;
+}
+
+.brandSwiperSection .product .priceBlock {
+  display: flex;
+  align-items: center;
+}
+
+.brandSwiperSection .product .price {
+  font-size: 34rpx;
+  font-weight: 300;
+  color: #dc2229;
+}
+
+.brandSwiperSection .product .priceOld {
+  font-size: 28rpx;
+  font-weight: 300;
+  color: #aaa;
+  padding-left: 20rpx;
+  text-decoration: line-through #aaa solid;
+}
+
+.brandSwiperSection .purchaseBtn {
+  width: 300rpx;
+  margin-top: 30rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #dc2229;
+  border: 1px #dc2229 solid;
+}
+
+.swiper-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  padding-right: 20rpx;
+}
+
+.swiper-dot {
+  width: 10px;
+  height: 4px;
+  background: #000;
+  border-radius: 4px;
+}
+
+.swiper-dot-active {
+  background: #dc2229;
+  width: 15px;
+  transition: width 0.1s linear;
+}
+
+.swiper-dot:not(:last-child) {
+  margin-right: 15rpx;
+}
+
+.more {
+  text-align: center;
+  color: #dc2229;
+  font-size: 28rpx;
+}
+
+.more::after {
+  content: " ";
+  display: inline-block;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  height: 7px;
+  width: 7px;
+  border-width: 1px 1px 0 0;
+  border-color: #dc2229;
+  border-style: solid;
+  top: -1px;
+  position: relative;
+  margin-left: 0.3em;
+}

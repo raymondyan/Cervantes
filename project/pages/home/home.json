@@ -8,6 +8,8 @@
     "index-slides": "../../component/indexSlides/indexSlides",
     "slogen": "../../component/slogen/slogen",
     "product-section": "../../component/productSection/productSection",
-    "brand-section": "../../component/brandSection/brandSection"
+    "brand-section": "../../component/brandSection/brandSection",
+    "vol-section": "../../component/volSection/volSection",
+    "brand-collection": "../../component/brandCollection/brandCollection"
   }
 }

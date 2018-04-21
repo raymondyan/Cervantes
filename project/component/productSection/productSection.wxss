@@ -22,22 +22,24 @@
   width: 30px;
   background-color: #dc2229;
   margin: 10rpx auto 40rpx;
-  border: 0;
-  border-top: 1px solid #eee;
 }
 
 .prodcutList {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .product {
   width: 30%;
+  padding-bottom: 50rpx;
 }
 
 .product image {
   width: 225rpx;
   height: 225rpx;
+  border: 1rpx solid #eee;
+  border-radius: 0;
 }
 
 .product .brand {
@@ -45,15 +47,16 @@
   font-size: 20rpx;
   background-color: #000;
   color: white;
-  height: 26rpx;
-  line-height: 26rpx;
+  height: 30rpx;
+  line-height: 30rpx;
   padding: 0 10rpx;
-  border-radius: 5rpx;
+   border-radius: 5rpx; 
 }
 
 .product .name {
   font-size: 28rpx;
   color: #333;
+  font-weight: 300;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -64,14 +67,14 @@
 
 .product .price {
   font-size: 35rpx;
-  font-weight: 600;
+  font-weight: 300;
   color: #dc2229;
 }
 
 .more {
   text-align: center;
   color: #444;
-  padding-top: 50rpx;
+   padding-top: 10rpx; 
   font-size: 28rpx;
 }
 

@@ -3,10 +3,10 @@
   <view class='sectionTitle'>{{name}}</view>
   <view class='sectionEnTitle'>{{nameEn}}</view>
   <view class='swiper-dots'>
-    <view class="{{ dot == current ? 'swiper-dot swiper-dot-active' : 'swiper-dot' }}" wx:for="{{dots}}" wx:for-item="dot"></view>
+    <view class="{{ dot == current ? 'swiper-dot swiper-dot-active' : 'swiper-dot' }}" wx:for="{{dots}}" wx:for-item="dot" wx:key="index"></view>
   </view>
 
-  <swiper class="swiper-box" style='height:630rpx;' indicator-color="#000" indicator-active-color="#dc2229" bindchange="changeSlides">
+  <swiper class="swiper-box" style='height:630rpx;'bindchange="changeSlides">
     <swiper-item>
       <view class='brandSwiperSection'>
         <view class='brandItem' wx:for="{{sortedBrands[0]}}" wx:key="index" wx:for-item="brand">

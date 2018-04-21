@@ -1,6 +1,6 @@
 .section {
   border-bottom: 16rpx #eee solid;
-  padding: 30rpx 0 30rpx;
+  padding: 30rpx 0 0 0;
 }
 
 .sectionTitle {
@@ -32,19 +32,6 @@
   border-bottom: 1px solid #eee;
 }
 
-.brandSwiperSection .brandItem:nth-child(odd){
-  border-right: 1px solid #eee;
-}
-
-.brandSwiperSection .brandItem:nth-child(1),
-.brandSwiperSection .brandItem:nth-child(2){
-  border-top: 1px solid #eee;
-}
-
-.brandSwiperSection image{
-  width: 80%;
-}
-
 .swiper-dots{
   display: flex;
   justify-content: center;
@@ -70,23 +57,11 @@
   margin-right: 15rpx;
 }
 
-.more {
-  text-align: center;
-  color: #dc2229;
-  font-size: 28rpx;
+.editChoice {
+  height: 360rpx;
+  padding-top: 40rpx;
 }
 
-.more::after {
-  content: " ";
-  display: inline-block;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  height: 7px;
-  width: 7px;
-  border-width: 1px 1px 0 0;
-  border-color: #dc2229;
-  border-style: solid;
-  top: -1px;
-  position: relative;
-  margin-left: 0.3em;
+.editChoice image {
+  width: 750rpx;
 }

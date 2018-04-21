@@ -1,6 +1,10 @@
 <view>
   <index-slides slides="{{indexSlides}}" />
   <slogen/>
-  <product-section name="澳邮精选" nameEn="AuPost Featured" more="更多精选" products="{{auPostChoices}}" />
+  <vol-section name="本周编辑" nameEn="Vol. 124" choices="{{editorChoices}}" />  
   <brand-section name="品牌街区" more="更多品牌" nameEn="Brand Street" brands="{{brands}}" />
+  <product-section name="澳邮精选" nameEn="AuPost Featured" more="更多精选" products="{{auPostChoices}}" />
+  
+  <brand-collection collection="{{nairCollection}}" />
+  <brand-collection collection="{{liverAndStomachCollection}}" />
 </view>

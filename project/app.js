@@ -1,8 +1,7 @@
-//app.js
 App({
   onLaunch: function(){
-    wx.showTabBarRedDot({
-      index:3
-    })
+    // wx.showTabBarRedDot({
+    //   index:3
+    // })
   }
 })

@@ -10,7 +10,6 @@ swiper-item {
   align-items: center;
 }
 
-
 swiper {
   height: 500rpx;
   position: relative;

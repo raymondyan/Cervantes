@@ -11,4 +11,5 @@
       <view class='price'>{{price.formatPrice(product.price)}}</view>
     </view>
   </view>
+  <view class='more'>{{more}}</view>
 </view>

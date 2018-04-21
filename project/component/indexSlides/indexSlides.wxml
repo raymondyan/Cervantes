@@ -6,7 +6,4 @@
       </swiper-item>
     </block>
   </swiper>
-  <!-- <view class='counter'>
-    {{current+1}} / {{itemCount}}
-  </view> -->
 </view>

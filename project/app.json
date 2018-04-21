@@ -1,9 +1,10 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
     "pages/shoppingBasket/shoppingBasket",
     "pages/my/my",
-    "pages/lifestyle/lifestyle"
+    "pages/lifestyle/lifestyle",
+    "pages/category/category"
   ],
   "tabBar": {
     "color": "#bfbfbf",
@@ -18,7 +19,7 @@
         "text": "精选"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/category/category",
         "iconPath": "./static/cate.png",
         "selectedIconPath": "./static/cate_on.png",
         "text": "分类"
@@ -37,16 +38,16 @@
       },
       {
         "pagePath": "pages/my/my",
-       "iconPath": "./static/my.png",
-      "selectedIconPath": "./static/my_on.png",
+        "iconPath": "./static/my.png",
+        "selectedIconPath": "./static/my_on.png",
         "text": "我的"
       }
     ]
   },
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }

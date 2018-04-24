@@ -1,7 +1,39 @@
+.content {
+  padding-top: 50rpx;
+}
+
 .copyright {
   text-align: center;
   padding: 30rpx 0;
   font-size: 24rpx;
   color: #aaa;
   font-weight: 300;
+}
+
+.searchBox {
+  position: fixed;
+  top: 20;
+  z-index: 1003;
+  background: rgba(255, 255, 255, 0.98);
+  width: 750rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px #efefef solid;
+}
+
+.searchBox .searchInput{  
+  position: absolute;
+  border: 4rpx #dc2229 solid;
+  border-radius: 8rpx;
+  width: 670rpx;
+  padding-left: 50rpx;
+  margin-left: 15rpx;
+  height: 60rpx;
+  font-size: 26rpx;
+}
+
+.searchBox .searchIcon {
+  position: relative;
+  top: -3px;
+  left: 15px;
 }

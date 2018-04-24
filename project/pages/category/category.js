@@ -1,31 +1,25 @@
-// pages/category/category.js
+import { categories } from '../../fixture/categories.js'
+
 Page({
 
   data: {
-    navLeftItems: [],
-    navRightItems: [],
     curNav: 1,
     curIndex: 0,
     winWidth: 0,
     winHeight: 0,
+    animationMarker:{}
   },
+
   onLoad: function () {
-    // 加载的使用进行网络访问，把需要的数据设置到data数据对象  
-    var that = this
-    wx.request({
-      url: 'http://huanqiuxiaozhen.com/wemall/goodstype/typebrandList',
-      method: 'GET',
-      data: {},
-      header: {
-        'Accept': 'application/json'
-      },
-      success: function (res) {
-        console.log(res)
-        that.setData({
-          navLeftItems: res.data,
-          navRightItems: res.data
-        })
-      }
+    const animation = wx.createAnimation({
+      duration: 200,
+      timingFunction: 'ease',
+    })
+
+    this.animation = animation
+    this.setData({
+      categories: categories,
+      subCategories: categories[this.data.curIndex].subCategory
     })
   },
   onReady: function () {
@@ -33,27 +27,28 @@ Page({
     setTimeout(function () {
       wx.getSystemInfo({
         success: function (res) {
-          console.log("height" + res.windowHeight)
           that.setData({
             winWidth: res.windowWidth,
             winHeight: res.windowHeight / (res.windowWidth / 750)
           });
         }
       });
-
     }, 600);
   },
-
-  //事件处理函数  
   switchRightTab: function (e) {
-    // 获取item项的id，和数组的下标值  
-    let id = e.target.dataset.id,
-      index = parseInt(e.target.dataset.index);
-    // 把点击到的某一项，设为当前index  
+    const id = e.target.dataset.id;
+    const index = parseInt(e.target.dataset.index);
     this.setData({
       curNav: id,
-      curIndex: index
+      curIndex: index,
+      subCategories: categories[index].subCategory
+    })
+    this.moveTabMarker(index)
+  },
+  moveTabMarker: function(index) {
+    this.animation.translateY(index*42).step()
+    this.setData({
+      animationMarker: this.animation.export()
     })
   }
-
 })  

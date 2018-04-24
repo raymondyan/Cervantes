@@ -1,10 +1,13 @@
-<view>
+<view class='searchBox'>
+  <input class='searchInput' confirm-type="search" placeholder-style="color: #555" placeholder='澳洲好物等你来搜'></input>
+  <icon class='searchIcon' type="search" size="14" />
+</view>
+<view class='content'>
   <index-slides slides="{{indexSlides}}" />
   <slogen/>
-  <vol-section name="本周编辑" nameEn="Vol. 124" choices="{{editorChoices}}" />  
-  <brand-section name="品牌街区" more="更多品牌" nameEn="Brand Street" brands="{{brands}}" />
   <product-section name="澳邮精选" nameEn="AuPost Featured" more="更多精选" products="{{auPostChoices}}" />
-  
+  <vol-section name="本周编辑" nameEn="Vol. 124" choices="{{editorChoices}}" />
+  <brand-section name="品牌街区" more="更多品牌" nameEn="Brand Street" brands="{{brands}}" />
   <brand-collection collection="{{nairCollection}}" />
   <brand-collection collection="{{liverAndStomachCollection}}" />
   <view class='copyright'> Powered By Spear & Windmill Studio</view>

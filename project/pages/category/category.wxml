@@ -1,40 +1,36 @@
-<view class="container" style="height: {{winHeight}}rpx;">  
-  <!--左侧栏-->  
+<view class='container' style='height: {{winHeight}}rpx'>
   <view class="nav_left">  
-    <block wx:for="{{navLeftItems}}">  
-      <!--当前项的id等于item项的id，那个就是当前状态-->  
-      <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->  
-      <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}">{{item.tree.desc}}</view>  
+    <block wx:for="{{categories}}" wx:key="index" wx:for-item="category">  
+      <view class="nav_left_items {{curNav == category.id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{category.id}}">
+      {{category.label}}
+      </view>  
     </block>  
-  </view>  
-  <!--右侧栏-->  
-  <view class="nav_right">  
-    <!--如果有数据，才遍历项-->  
-    <view wx:if="{{navRightItems[curIndex].tree.nodes[1].tree.nodes}}">  
-      <block wx:for="{{navRightItems[curIndex].tree.nodes[1].tree.nodes}}">  
+  </view>
+  <view animation="{{animationMarker}}" class='navMarker'></view>
+
+  <view class="nav_right"> 
+  <scroll-view scroll-y style="height: {{winHeight}}rpx;" scroll-left="0">
+    <view wx:if="{{subCategories}}">  
+      <block wx:for="{{subCategories}}" wx:key="index" wx:for-item="subCategory">  
         <view class="nav_right_items">  
-          <navigator url="../list/index?brand={{item.tree.id}}&typeid={{navRightItems[curIndex].id}}">  
-            <!--用view包裹图片组合，如果有图片就用，无图片提供就使用50x30的这个默认图片-->  
+          <view>  
             <view>                
-              <block wx:if="{{item.tree.logo}}">  
-                <image src="{{item.tree.logo}}"></image>  
+              <block wx:if="{{subCategory.thumbnail}}">  
+                <image src="{{subCategory.thumbnail}}"></image>  
               </block>  
               <block wx:else>  
                 <image src="http://temp.im/50x30"></image>  
               </block>  
             </view>  
-            <!--如果有文字，就用文字；无文字就用其他-->  
-            <view wx:if="{{item.tree.desc}}">  
-              <text>{{item.tree.desc}}</text>  
+            <view>  
+              <text>{{subCategory.label}}</text>  
             </view>  
-            <view wx:else>  
-              <text>{{item.tree.desc2}}</text>  
-            </view>  
-          </navigator>  
+          </view>  
         </view>  
       </block>  
     </view>  
-    <!--如果无数据，则显示数据-->  
-    <view class='nodataWarnning' wx:else>暂无数据</view>  
+    <view class='nodataWarnning' wx:else>暂无数据</view>
+    </scroll-view>
   </view>  
-</view>  
+
+</view>

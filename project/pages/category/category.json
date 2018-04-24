@@ -3,5 +3,6 @@
   "navigationBarTextStyle": "black",
   "navigationBarTitleText": "分类",
   "backgroundColor": "#FFFFFF",
-  "backgroundTextStyle": "light"
+  "backgroundTextStyle": "light",
+  "disableScroll": true
 }

@@ -1,0 +1,16 @@
+<view class='searchBox'>
+    <input class='searchInput' confirm-type="search" placeholder-style="color: #555" placeholder='澳洲好物等你来搜'
+           bindfocus="showTheModal" bindblur="hideTheModel"/>
+
+    <icon class='searchIcon' type="search" size="14"/>
+</view>
+
+<view class="modalWindow" wx:if="{{showModal}}" style="height:{{modalHeight}}rpx;">
+    <view animation="{{animationPanel}}" class="tipsPanel">
+        <view class="keywordGroup">
+            <block wx:for="{{searchKeywords}}" wx:key="index" wx:for-item="keyword">
+                <view class="keywordItem"># {{keyword.keyword}}</view>
+            </block>
+        </view>
+    </view>
+</view>

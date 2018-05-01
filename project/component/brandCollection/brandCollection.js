@@ -20,7 +20,8 @@ Component({
       Product.setQuery(query).find().then( (res) => {
         collection.products = res.data.objects;
         scope.setData({
-          collection
+          collection,
+          dots: Array.from({length: res.data.objects.length + 1}, (x, i) => i)
         })
       }, (err) => {
        console.log(err);

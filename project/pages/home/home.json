@@ -10,6 +10,7 @@
     "product-section": "../../component/productSection/productSection",
     "brand-section": "../../component/brandSection/brandSection",
     "vol-section": "../../component/volSection/volSection",
-    "brand-collection": "../../component/brandCollection/brandCollection"
+    "brand-collection": "../../component/brandCollection/brandCollection",
+    "search-block": "../../component/searchBlock/searchBlock"
   }
 }

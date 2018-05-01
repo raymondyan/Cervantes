@@ -58,12 +58,3 @@
     <view class='label'>帮助</view>
   </view>
 </view>
-
-<!-- <view class='brandFooter'>
-  <view>
-    <text>服务条款</text>
-    <text>意见反馈</text>
-    <text>关于我们</text>
-  </view>
-  <image class='brand' src='../../static/australia_post.png'></image>  
-</view> -->

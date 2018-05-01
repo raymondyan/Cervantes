@@ -1,14 +1,10 @@
 Component({
-  properties: {
-    slides: Array,
-  },
-
   data: {
     current: 0
   },
 
   methods: {
-    changeSlides : function(e){
+    changeSlides: function (e) {
       this.setData({
         current: e.detail.current
       })
@@ -17,9 +13,15 @@ Component({
 
   attached: function () {
     let scope = this;
-    const itemCount = scope.data.slides.length
-    scope.setData({
-      itemCount
+    let tableID = 34901;
+    let objects = { tableID };
+    wx.BaaS.getRecordList(objects).then( (res) => {
+      scope.setData({
+        slides : res.data.objects,
+        dots: Array.from({length: res.data.objects.length}, (x, i) => i)
+      })
+    }, (err) => {
+      console.log(err);
     })
   }
-})
+});

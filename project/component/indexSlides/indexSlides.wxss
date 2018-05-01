@@ -1,8 +1,21 @@
+.backPanel {
+  width: 750rpx;
+  height: 290rpx;
+  background-color: #dc2229;
+  position: absolute;
+}
+
+.swiperBox {
+  position: relative;
+  top: 0rpx;
+  z-index: 1004;
+}
+
 .swiperBox image {
   width: 720rpx;
   height: 400rpx;
+  margin-top: 60rpx;
   border-radius: 18rpx;
-  border: 1rpx solid #eee;
 }
 
 .swiperBox swiper-item {
@@ -30,4 +43,37 @@
   position: absolute;
   top: 20rpx;
   left: 20rpx;
+}
+
+.swiper-dots{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+
+.swiper-dot{
+  width: 10px;
+  height: 3px;
+  background: #000;
+  border-radius: 3px;
+}
+
+.swiper-dot-active{
+  background: #dc2229;
+  width: 15px;
+  transition: width 0.1s linear;
+}
+
+.swiper-dot:not(:last-child) {
+  margin-right: 15rpx;
+}
+
+.editChoice {
+  height: 360rpx;
+  padding-top: 40rpx;
+}
+
+.editChoice image {
+  width: 750rpx;
 }

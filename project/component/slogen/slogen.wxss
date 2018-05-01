@@ -4,7 +4,7 @@
   font-weight: 200;
   justify-content: space-around;
   height: 70rpx;
-  background-color: #000;
-  color: #EEE;
+  background-color: #fff;
+  color: #dc2229;
   align-items: center;
 }

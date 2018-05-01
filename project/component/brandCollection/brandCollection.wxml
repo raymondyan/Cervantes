@@ -19,7 +19,7 @@
       <block wx:for="{{collection.products}}" wx:key="index" wx:for-item="product">
         <swiper-item>
           <view class="product">
-            <image class='image' mode='aspectFit' src='{{product.image}}'></image>
+            <image class='image' mode='aspectFit' src='{{product.imageUrl}}'></image>
             <view class='detail'>
               <view wx:if="{{product.tag}}" class='tag'># {{product.tag}}</view>
               <view class='name'>{{product.name}}</view>

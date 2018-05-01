@@ -28,7 +28,7 @@
         "pagePath": "pages/lifestyle/lifestyle",
         "iconPath": "./static/au.png",
         "selectedIconPath": "./static/au_on.png",
-        "text": "品质澳洲"
+        "text": "发现澳洲"
       },
       {
         "pagePath": "pages/shoppingBasket/shoppingBasket",

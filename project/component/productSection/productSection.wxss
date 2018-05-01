@@ -32,30 +32,30 @@
 }
 
 .product {
-  width: 30%;
+  width: 40%;
   padding-bottom: 50rpx;
 }
 
 .product image {
-  width: 225rpx;
-  height: 225rpx;
-  border: 1rpx solid #eee;
+  width: 300rpx;
+  height: 300rpx;
+  /*border: 1rpx solid #eee;*/
   border-radius: 0;
 }
 
-.product .brand {
-  display: inline-block;
-  font-size: 20rpx;
-  background-color: #000;
-  color: white;
-  height: 30rpx;
-  line-height: 30rpx;
-  padding: 0 10rpx;
-   border-radius: 5rpx; 
-}
+/*.product .brand {*/
+  /*display: inline-block;*/
+  /*font-size: 20rpx;*/
+  /*background-color: #000;*/
+  /*color: white;*/
+  /*height: 30rpx;*/
+  /*line-height: 30rpx;*/
+  /*padding: 0 10rpx;*/
+   /*border-radius: 5rpx; */
+/*}*/
 
 .product .name {
-  font-size: 28rpx;
+  font-size: 26rpx;
   color: #333;
   font-weight: 300;
   text-overflow: ellipsis;
@@ -67,7 +67,7 @@
 }
 
 .product .price {
-  font-size: 35rpx;
+  font-size: 32rpx;
   font-weight: 300;
   color: #dc2229;
 }

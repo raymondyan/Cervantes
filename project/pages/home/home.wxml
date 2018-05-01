@@ -1,14 +1,25 @@
 <view class='searchBox'>
-  <input class='searchInput' confirm-type="search" placeholder-style="color: #555" placeholder='澳洲好物等你来搜'></input>
+  <input class='searchInput' confirm-type="search" placeholder-style="color: #555" placeholder='澳洲好物等你来搜' bindfocus="showTheModal" bindblur="hideTheModel"></input>
+
   <icon class='searchIcon' type="search" size="14" />
 </view>
+
+<view class="modalWindow" wx:if="{{showModal}}" style="height:{{modalHeight}}rpx;">
+  <view animation="{{animationPanel}}" class="tipsPanel" >
+    <view class="keywordGroup">
+      <block wx:for="{{searchKeywords}}" wx:key="index" wx:for-item="keyword">
+        <view class="keywordItem"># {{keyword}}</view>
+      </block>
+    </view>
+  </view>
+</view>
 <view class='content'>
-  <index-slides slides="{{indexSlides}}" />
+  <index-slides />
   <slogen/>
-  <product-section name="澳邮精选" nameEn="AuPost Featured" more="更多精选" products="{{auPostChoices}}" />
-  <vol-section name="本周编辑" nameEn="Vol. 124" choices="{{editorChoices}}" />
-  <brand-section name="品牌街区" more="更多品牌" nameEn="Brand Street" brands="{{brands}}" />
-  <brand-collection collection="{{nairCollection}}" />
-  <brand-collection collection="{{liverAndStomachCollection}}" />
+  <product-section name="澳邮精选" nameEn="AuPost Featured" more="更多精选"/>
+  <vol-section name="本周编辑" nameEn="Vol. 124" />
+  <brand-section name="品牌街区" more="更多品牌" nameEn="Brand Street" />
+  <brand-collection collectionId="5ae82ba92f70a424e122b11d" />
+  <brand-collection collectionId="5ae82b6f2f70a424ffde299c" />
   <view class='copyright'> Powered By Spear & Windmill Studio</view>
 </view>

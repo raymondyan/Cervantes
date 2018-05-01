@@ -1,2 +1,69 @@
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class="me">
+  <view class='profile'>
+    <view class="userAvatar">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class='userNickName'>
+      <open-data type="userNickName"></open-data>
+      <view class='accumulate'>积分：
+        <text class='score'>192</text>
+      </view>
+    </view>
+  </view>
+  <image class='settingIcon' src='../../static/setting.png'></image>
+</view>
+
+<view class='divide'>
+  <text>我的订单</text>
+</view>
+
+<view class='order'>
+  <view class='process unpaid'>
+    <image class='orderIcon' src='../../static/pay.png'></image>
+    <view class='label'>未支付</view>
+  </view>
+  <view class='process delivery'>
+    <image class='orderIcon' src='../../static/delivery.png'></image>
+    <view class='label'>待收货</view>
+  </view>
+  <view class='process finished'>
+    <image class='orderIcon' src='../../static/finished.png'></image>
+    <view class='label'>已完成</view>
+  </view>
+  <view class='process comment'>
+    <image class='orderIcon' src='../../static/comment.png'></image>
+    <view class='label'>待评价</view>
+  </view>
+</view>
+
+<view class='divide'>
+  <text>购物助手</text>
+</view>
+
+<view class='order'>
+  <view class='process unpaid'>
+    <image class='orderIcon' src='../../static/voncher.png'></image>
+    <view class='label'>礼券</view>
+  </view>
+  <view class='process delivery'>
+    <image class='orderIcon' src='../../static/favor.png'></image>
+    <view class='label'>收藏</view>
+  </view>
+  <view class='process finished'>
+    <image class='orderIcon' src='../../static/address.png'></image>
+    <view class='label'>地址</view>
+  </view>
+  <view class='process comment'>
+    <image class='orderIcon' src='../../static/help.png'></image>
+    <view class='label'>帮助</view>
+  </view>
+</view>
+
+<!-- <view class='brandFooter'>
+  <view>
+    <text>服务条款</text>
+    <text>意见反馈</text>
+    <text>关于我们</text>
+  </view>
+  <image class='brand' src='../../static/australia_post.png'></image>  
+</view> -->

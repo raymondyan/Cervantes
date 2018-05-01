@@ -1,18 +1,17 @@
 Component({
   properties: {
     name: String,
-    nameEn: String, 
-    brands: Array,
+    nameEn: String,
     more: String
   },
   data: {
     current: 0
   },
   methods: {
-    sortBrands : function(brands){
-      var sortedBrands = []
-      sortedBrands.push(brands.slice(0,6))
-      sortedBrands.push(brands.slice(6, 11))      
+    sortBrands: function (brands) {
+      const sortedBrands = [];
+      sortedBrands.push(brands.slice(0, 6));
+      sortedBrands.push(brands.slice(6, 11));
       return sortedBrands
     },
     changeSlides: function (e) {
@@ -21,11 +20,17 @@ Component({
       })
     }
   },
-  attached: function() {
-  let scope = this;
-  scope.setData({
-    sortedBrands: scope.sortBrands(scope.data.brands),
-    dots: Array.from({ length: scope.sortBrands(scope.data.brands).length }, (x, i) => i)
-  })
+  attached: function () {
+    let scope = this;
+    let tableID = 34910;
+    let objects = {tableID};
+    wx.BaaS.getRecordList(objects).then((res) => {
+      scope.setData({
+        sortedBrands: scope.sortBrands(res.data.objects),
+        dots: [0,1]
+      })
+    }, (err) => {
+      console.log(err);
+    })
   }
-})
+});

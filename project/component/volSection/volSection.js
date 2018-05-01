@@ -1,8 +1,7 @@
 Component({
   properties: {
     name: String,
-    nameEn: String, 
-    choices: Array
+    nameEn: String,
   },
   data: {
     current: 0
@@ -14,10 +13,17 @@ Component({
       })
     }
   },
-  attached: function() {
-  let scope = this;
-  scope.setData({
-    dots: Array.from({ length: scope.data.choices.length }, (x, i) => i)
-  })
+  attached: function () {
+    let scope = this;
+    let tableID = 34921;
+    let objects = {tableID};
+    wx.BaaS.getRecordList(objects).then((res) => {
+      scope.setData({
+        choices: res.data.objects,
+        dots: Array.from({length: res.data.objects.length}, (x, i) => i)
+      })
+    }, (err) => {
+      console.log(err);
+    })
   }
-})
+});

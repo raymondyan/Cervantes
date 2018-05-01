@@ -1,1 +1,111 @@
-/* pages/my/my.wxss */
+page {
+  background-color: #eee;
+}
+
+.me {
+  background-color: #dc2229;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settingIcon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+
+.profile {
+  width: 400rpx;
+  background-size: auto 50%;
+  height: 160rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.userAvatar {
+  height: 110rpx;
+  width: 110rpx;
+  border: 4rpx solid #e48589;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+  overflow: hidden;
+}
+
+.userNickName {
+  font-size: 34rpx;
+  color: white;
+  font-weight: 500;
+  padding-left: 25rpx;
+}
+
+.accumulate {
+  font-size: 28rpx;
+  font-weight: 300;
+  color: #ecd1d2;
+}
+
+.divide {
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333;
+}
+
+.order {
+  display: flex;
+  width: 710rpx;
+  height: 160rpx;
+  margin-top: 40rpx;
+  justify-content: space-around;
+  margin-left: 20rpx;
+  border-radius: 10rpx;
+  background-color: white
+}
+
+.process {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+.orderIcon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.label {
+  color: #333;
+  font-size: 24rpx;
+  padding-top: 15rpx
+}
+
+.brand {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.brandFooter {
+  position: fixed;
+  bottom: 20rpx; 
+  width: 750rpx;
+  text-align: center;
+}
+
+.brandFooter text {
+  color: #666;
+  font-size: 26rpx;
+  /* font-weight: 600; */
+  text-decoration: underline;
+  line-height: 100rpx;
+}
+
+.brandFooter text:not(:last-child) {
+  margin-right: 45rpx;
+}

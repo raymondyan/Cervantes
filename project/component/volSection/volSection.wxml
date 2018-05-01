@@ -9,7 +9,7 @@
   <swiper class='editChoice' bindchange="changeSlides" circular="true" >
     <block wx:for="{{choices}}" wx:key="index" wx:for-item="choice">
       <swiper-item>
-        <image mode='widthFix' src="{{choice}}" class="slide-image" />
+        <image mode='widthFix' src="{{choice.imageUrl}}" class="slide-image" />
       </swiper-item>
     </block>
   </swiper>

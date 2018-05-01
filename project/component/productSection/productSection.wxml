@@ -5,8 +5,7 @@
   <view class="sectionTitleDivide" />
   <view class='prodcutList'>
     <view class='product' wx:for="{{products}}" wx:key="index" wx:for-item="product">
-      <image mode='aspectFill' src='{{product.image}}'></image>
-      <view class='brand'>{{product.brand}}</view>
+      <image mode='aspectFill' src='{{product.imageUrl}}'></image>
       <view class='name'>{{product.name}}</view>
       <view class='price'>{{price.formatPrice(product.price)}}</view>
     </view>

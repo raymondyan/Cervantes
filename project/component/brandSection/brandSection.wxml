@@ -10,14 +10,14 @@
     <swiper-item>
       <view class='brandSwiperSection'>
         <view class='brandItem' wx:for="{{sortedBrands[0]}}" wx:key="index" wx:for-item="brand">
-          <image mode='aspectFit' src='{{brand.image}}'></image>
+          <image mode='aspectFit' src='{{brand.imageUrl}}'></image>
         </view>
       </view>
     </swiper-item>
     <swiper-item>
       <view class='brandSwiperSection'>
         <view class='brandItem' wx:for="{{sortedBrands[1]}}" wx:key="index" wx:for-item="brand">
-          <image mode='aspectFit' src='{{brand.image}}'></image>
+          <image mode='aspectFit' src='{{brand.imageUrl}}'></image>
         </view>
         <view class='brandItem more'>{{more}}</view>
       </view>

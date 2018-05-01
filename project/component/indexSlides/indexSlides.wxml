@@ -1,9 +1,13 @@
+<view class="backPanel"></view>
 <view class='swiperBox'>
-  <swiper indicator-dots="true" indicator-color="#000" indicator-active-color="#dc2229" bindchange="changeSlides" circular="true" autoplay="true" interval="4000">
-    <block wx:for="{{slides}}" wx:key="index" wx:for-item="slideLink">
+  <swiper bindchange="changeSlides" circular="true" autoplay="true" interval="4000">
+    <block wx:for="{{slides}}" wx:key="index" wx:for-item="slide">
       <swiper-item>
-        <image mode='aspectFill' src="{{slideLink}}" class="slide-image" />
+        <image mode='aspectFill' src="{{slide.imageUrl}}" class="slide-image" />
       </swiper-item>
     </block>
   </swiper>
+  <view class='swiper-dots'>
+    <view class="{{ dot == current ? 'swiper-dot swiper-dot-active' : 'swiper-dot' }}" wx:for="{{dots}}" wx:for-item="dot" wx:key="index"></view>
+  </view>
 </view>

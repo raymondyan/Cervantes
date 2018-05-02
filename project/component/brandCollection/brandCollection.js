@@ -26,6 +26,15 @@ Component({
       }, (err) => {
        console.log(err);
       })
+    },
+    goToProduct: function (e) {
+      const sku = e.currentTarget.dataset.sku;
+      wx.navigateTo({
+        url: '../product/product?sku=' + sku,
+        success: function (res) { },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
     }
   },
   attached: function () {

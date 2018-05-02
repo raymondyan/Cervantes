@@ -1,0 +1,7 @@
+<wxs src="../utils/price.wxs" module="price" />
+<view class='productProfile'>
+  <view class='tag'># {{profile.tag}}</view>
+  <view class='name'>{{profile.name}}</view>
+  <view class='price'>{{price.formatPrice(profile.price)}}</view>
+  <view class='priceOld'>{{price.formatPrice(profile.priceold)}}</view>
+</view>

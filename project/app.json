@@ -4,7 +4,8 @@
     "pages/shoppingBasket/shoppingBasket",
     "pages/my/my",
     "pages/lifestyle/lifestyle",
-    "pages/category/category"
+    "pages/category/category",
+    "pages/product/product"
   ],
   "tabBar": {
     "color": "#bfbfbf",

@@ -38,7 +38,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -56,6 +56,12 @@
 					"id": -1,
 					"name": "我的",
 					"pathName": "pages/my/my",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "shangp",
+					"pathName": "pages/product/product",
 					"query": ""
 				}
 			]

@@ -1,0 +1,46 @@
+.productProfile {
+  display: flex;
+  flex-direction: column;
+  width: 750rpx;
+  padding: 20rpx 0;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 10rpx #eee solid;
+}
+
+.productProfile .tag {
+  display: inline-block;
+  font-size: 26rpx;
+  padding: 0 20rpx;
+  height: 45rpx;
+  font-weight: 300;
+  line-height: 45rpx;
+  color: #fff;
+  background-color: #000;
+}
+
+.productProfile .name {
+  width: 700rpx;
+  color: #444;
+  font-size: 40rpx;
+  padding-top: 15rpx;  
+  text-align: center;
+  font-weight: 300;
+}
+
+.productProfile .price {
+  font-size: 36rpx;
+  font-weight: 300;
+  color: #dc2229;
+  padding-top: 15rpx;
+  text-align: center;  
+}
+
+.productProfile .priceOld {
+  font-size: 30rpx;
+  font-weight: 300;
+  color: #aaa;
+  text-align: center;  
+  padding-top: 10rpx;  
+  text-decoration: line-through #aaa solid;
+}

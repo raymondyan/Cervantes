@@ -4,7 +4,7 @@
   <view class='sectionEnTitle'>{{nameEn}}</view>
   <view class="sectionTitleDivide" />
   <view class='prodcutList'>
-    <view class='product' wx:for="{{products}}" wx:key="index" wx:for-item="product">
+    <view class='product' data-sku='{{product.sku}}' wx:for="{{products}}" wx:key="index" wx:for-item="product" bindtap="goToProduct">
       <image mode='aspectFill' src='{{product.imageUrl}}'></image>
       <view class='name'>{{product.name}}</view>
       <view class='price'>{{price.formatPrice(product.price)}}</view>

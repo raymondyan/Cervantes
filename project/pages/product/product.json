@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "product-slide": "../../component/productDetailImage/productDetailImage",
+    "product-profile": "../../component/productProfile/productProfile"
+  }
+}

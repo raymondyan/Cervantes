@@ -1,0 +1,12 @@
+<view class='swiperBox'>
+  <swiper bindchange="changeSlides" circular="true" autoplay="true" interval="4000">
+    <block wx:for="{{images}}" wx:key="index" wx:for-item="image">
+      <swiper-item>
+        <image mode='aspectFill' src="{{image}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='swiper-dots'>
+    <view class="{{ dot == current ? 'swiper-dot swiper-dot-active' : 'swiper-dot' }}" wx:for="{{dots}}" wx:for-item="dot" wx:key="index"></view>
+  </view>
+</view>

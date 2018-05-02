@@ -1,0 +1,19 @@
+<product-slide images="{{productImages}}" />
+<product-profile profile="{{profile}}" />
+
+<view class='brand'>
+  <image mode='aspectFit' src='{{brandProfile.imageUrl}}'></image>
+  <view class='tips'>进入品牌主页</view>
+</view>
+
+<view class='operation'>
+  <view class="optBtn">
+    <image src='../../static/cart_on.png'></image>
+    <view>购物篮</view>
+  </view>
+  <view class="buyIcon">购买</view>
+  <view class="optBtn">
+    <image src='../../static/customer.png'></image>
+    <view>客服</view>
+  </view>
+</view>

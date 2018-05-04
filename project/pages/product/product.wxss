@@ -56,7 +56,7 @@ page {
 .brand .tips {
   color: #888;
   font-size: 28rpx;
-  margin-right:40rpx;
+  margin-right: 40rpx;
 }
 
 .brand .tips::after {
@@ -73,5 +73,83 @@ page {
   top: -1px;
   margin-left: 0.3em;
   text-align: right;
+}
+
+.config {
+  width: 100%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  border-bottom: 10rpx #eee solid;
+}
+
+.config .item {
+  width: 92%;
+  display: flex;
+  font-size: 30rpx;
+  margin: 0 auto;
+  color: #555;
+  align-items: center;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  border-bottom: 1px #eee solid;
+}
+
+.config .item:last-child {
+  border-bottom: none;
+}
+
+.config .item view:first-child {
+  width: 30%;
+}
+
+.config .item view:last-child {
+  padding-left: 30rpx;
+  font-weight: 300;
+}
+
+.couponsScroll {
+  /* display: inline-block; */
+  white-space: nowrap;
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+  background-color: #eee;
+}
+
+.jagged {
+  margin-left: 20rpx;
+  width: 100px;
+  height: 40px;
+  display: inline-block;
+  padding: 10px;
+  background: #dc2229;
+  background: radial-gradient(transparent 0px, transparent 4px, #dc2229 4px, #dc2229);
+  background-size: 20px 20px;
+  background-position: -10px -10px;
+}
+
+.jagged:last-child {
+  margin-right: 20rpx;
+}
+
+.jagged .content {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30rpx;
+  background-color: #dc2229;
+}
+
+.details {
+  width: 750rpx;
+}
+
+.details image {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 

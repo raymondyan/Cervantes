@@ -1,9 +1,49 @@
 <product-slide images="{{productImages}}" />
 <product-profile profile="{{profile}}" />
+<product-picker showPanel="{{showChooseProduct}}" choices="{{productChoices}}" bindtaptouchlayer="switchChoosePanel" />
+
+<view class='coupons'>
+  <scroll-view class='couponsScroll' scroll-x style="width: 750rpx; height: 60px">
+    <view class='jagged'>
+      <view class='content'>
+        满199减10
+      </view>
+    </view>
+    <view class='jagged'>
+      <view class='content'>
+        满299减20
+      </view>
+    </view>
+    <view class='jagged'>
+      <view class='content'>
+        满399减30
+      </view>
+    </view>
+    <view class='jagged'>
+      <view class='content'>
+        满399减30
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
 
 <view class='brand'>
   <image mode='aspectFit' src='{{brandProfile.imageUrl}}'></image>
   <view class='tips'>进入品牌主页</view>
+</view>
+
+<view class='config'>
+  <view class='item' wx:for="{{configs}}" wx:key="index" wx:for-item="config">
+    <view>{{config.props}}</view>
+    <view>{{config.value}}</view>
+  </view>
+</view>
+
+<view class='details'>
+  <block wx:for="{{details}}" wx:key="index" wx:for-item="detail">
+    <image mode='widthFix' src='{{detail}}'></image>
+  </block>
 </view>
 
 <view class='operation'>
@@ -11,7 +51,7 @@
     <image src='../../static/cart_on.png'></image>
     <view>购物篮</view>
   </view>
-  <view class="buyIcon">购买</view>
+  <view class="buyIcon" bindtap='switchChoosePanel'>购买</view>
   <view class="optBtn">
     <image src='../../static/customer.png'></image>
     <view>客服</view>

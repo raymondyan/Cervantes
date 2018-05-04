@@ -2,6 +2,7 @@
   "navigationBarTitleText": "",
   "usingComponents": {
     "product-slide": "../../component/productDetailImage/productDetailImage",
-    "product-profile": "../../component/productProfile/productProfile"
+    "product-profile": "../../component/productProfile/productProfile",
+    "product-picker": "../../component/chooseProductPanel/chooseProductPanel"
   }
 }

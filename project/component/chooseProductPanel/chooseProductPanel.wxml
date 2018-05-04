@@ -1,0 +1,31 @@
+<wxs src="../utils/price.wxs" module="price" />
+<view class='chooseProduct' >
+  <view wx:if="{{showPanel == 1}}" bindtap='{{showPanel == 1 ? "closePanel" : ""}}'  catchtouchmove='{{showPanel == 1 ? "true" : ""}}'  class='opacityLayer {{showPanel == 1 ? "" : "invisible"}}' style='height: {{modalHeight}}rpx'></view>
+  <view animation="{{animationChooser}}" catchtouchmove='true' class='panel'>
+    <view class='productThumbnail'>
+      <image class="thumbnail"  src='{{choices[index].imageUrl}}'></image>
+    </view>
+    <image class='closePanelIcon' bindtap='closePanel' src='../../static/close.png'></image>
+    <view class='price'>{{price.formatPrice(choices[index].price)}}</view>
+    <view class='option'>
+      <view class='label'>规格</view>
+      <view class='choices'>
+        <block wx:for="{{choices}}" wx:key="index" wx:for-item="choice">
+          <view class='item {{choice.sku == choosenSku ? "active" : ""}} {{choice.available ? "" : "out"}}' data-sku='{{choice.sku}}' data-index='{{index}}' bindtap='{{choice.available ? "chooseIt" : ""}}'>{{choice.type}}</view>
+        </block>
+      </view>
+    </view>
+    <view class='amount'>
+      <view class='label'>数量</view>
+      <view class='adjustAmount'>
+        <view class='minus {{count == 1 ? "disable" : ""}}' bindtap='{{count == 1 ? "" : "minusMount"}}'>-</view>
+        <view class='count'>{{count}}</view>
+        <view class='add' bindtap='addMount'>+</view>
+      </view>
+    </view>
+    <view class='btnGroup'>
+      <view class='btn'>加入购物篮</view>
+      <view class='btn black'>前往结账</view>
+    </view>
+  </view>
+</view>

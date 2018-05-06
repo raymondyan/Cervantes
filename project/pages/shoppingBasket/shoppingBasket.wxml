@@ -16,9 +16,10 @@
           <view data-sku='{{order.sku}}' class='minus {{order.count == 1 ? "disable" : ""}}' bindtap='{{order.count == 1 ? "" : "minusMount"}}'>-</view>
           <view class='count'>{{order.count}}</view>
           <view data-sku='{{order.sku}}' class='add' bindtap='addMount'>+</view>
+          <view class='price'>{{price.formatPrice(order.count * order.price)}}</view>
         </view>
       </view>
-      <view class='price'>{{price.formatPrice(order.count * order.price)}}</view>
+      <image src='../../static/delete.png' class='delete' bindtap='deleteItem' data-sku='{{order.sku}}'></image>
     </view>
     <view class='summary'>
       <image src='{{pickAll ? "../../static/choose.png" : "../../static/ignore.png" }}' class='icon' data-sku='{{order.sku}}' bindtap='selectAll'></image>

@@ -118,9 +118,17 @@
 }
 
 .order .price {
-  font-size: 30rpx;
+  font-size: 34rpx;
+  font-weight: 300;
   color: #dc2229;
+  margin-left: 15rpx;
+}
 
+.order .delete {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 20rpx;
 }
 
 .adjustAmount {
@@ -164,7 +172,6 @@
   color: #ccc;
 }
 
-
 .summary {
   width: 750rpx;
   height: 100rpx;
@@ -192,7 +199,7 @@
 }
 
 .summary .selectAll {
- margin-right: 40rpx;
+  margin-right: 40rpx;
 }
 
 .summary .price {

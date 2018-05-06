@@ -16,6 +16,7 @@ Page({
       index: 3
     })
     this.loadUnpaidOrder();
+    this.calculateSelectedUnpaidOrder()
   },
   onTabItemTap: function () {
     wx.removeTabBarBadge({
@@ -40,14 +41,17 @@ Page({
   loadUnpaidOrder: function () {
     const scope = this;
     const myUnpaidOrder = loadUnpaidOrder() || []
+    scope.checkHasItemInBasket(myUnpaidOrder)
     scope.setData({
       myUnpaidOrder
     })
-    if (myUnpaidOrder.length === 0) {
-      scope.setData({
-        empty: true
-      })
-    }
+  },
+
+  checkHasItemInBasket: function (myUnpaidOrder) {
+    let scope = this;
+    scope.setData({
+      empty: myUnpaidOrder.length === 0
+    })
   },
 
   chooseIt: function (e) {
@@ -68,6 +72,28 @@ Page({
     this.calculateSelectedUnpaidOrder()
   },
 
+  deleteItem: function (e) {
+    const scope = this;
+    wx.showModal({
+      title: '提醒',
+      content: '确认将这件商品移出购物篮？',
+      success: function (res) {
+        if (res.confirm) {
+          const sku = e.currentTarget.dataset.sku;
+          let myUnpaidOrder = scope.data.myUnpaidOrder;
+          _.remove(myUnpaidOrder, (o) => o.sku == sku)
+          scope.setData({
+            myUnpaidOrder
+          })
+          scope.saveMyUnpaidOrder(myUnpaidOrder)
+          scope.calculateSelectedUnpaidOrder()
+          scope.checkHasItemInBasket(myUnpaidOrder)
+        } 
+      }
+    })
+    
+  },
+
   calculateSelectedUnpaidOrder: function () {
     const myUnpaidOrder = this.data.myUnpaidOrder;
     const selectedOrders = _.filter(myUnpaidOrder, { selected: true })
@@ -76,7 +102,7 @@ Page({
     }, 0);
     this.setData({
       totalPrice,
-      pickAll: selectedOrders.length === myUnpaidOrder.length
+      pickAll: selectedOrders.length === myUnpaidOrder.length && myUnpaidOrder.length > 0
     })
   },
 
@@ -94,7 +120,7 @@ Page({
     this.calculateSelectedUnpaidOrder()
   },
 
-  addMount: function(e) {
+  addMount: function (e) {
     const sku = e.currentTarget.dataset.sku;
     let myUnpaidOrder = this.data.myUnpaidOrder;
     myUnpaidOrder = _.map(myUnpaidOrder, (o) => {
@@ -130,7 +156,7 @@ Page({
     this.calculateSelectedUnpaidOrder()
   },
 
-  saveMyUnpaidOrder: function (myUnpaidOrder){
+  saveMyUnpaidOrder: function (myUnpaidOrder) {
     updateUnpaidOrder(myUnpaidOrder)
   }
 

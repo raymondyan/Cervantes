@@ -58,3 +58,35 @@
     <view class='label'>帮助</view>
   </view>
 </view>
+
+<view class='divide'>
+  <text>物流管家</text>
+</view>
+
+
+<swiper class="deliveries" bindchange="changeSlides">
+  <block wx:for="{{deliveries}}" wx:key="index" wx:for-item="delivery">
+    <swiper-item>
+      <view class="deliverySection">
+        <view class="deliveryOrder">
+          <view>订单号: {{delivery.orderId}}</view>
+          <view>{{delivery.desc}}</view>
+        </view>
+        <view class="deliveryStatus">
+          <view class="current">
+            <view>当前：</view>
+            <view>{{delivery.statusDate}}</view>
+            <view class="status">{{delivery.status}}</view>
+          </view>
+          <view class="next">
+            <view>即将：</view>
+            <view class="status">{{delivery.next}}</view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='swiper-dots'>
+  <view class="{{ dot == current ? 'swiper-dot swiper-dot-active' : 'swiper-dot' }}" wx:for="{{dots}}" wx:for-item="dot" wx:key="index"></view>
+</view>

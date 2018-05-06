@@ -1,15 +1,17 @@
+import { addUnpaidOrder } from '../../service/saveOrder'
+
 Component({
   properties: {
-    showPanel: { 
-      type: Number, 
-      value: -1, 
-      observer: function (newVal, oldVal) { 
+    showPanel: {
+      type: Number,
+      value: -1,
+      observer: function (newVal, oldVal) {
         let scope = this;
         scope.animation.translateY(newVal * -500).step();
         scope.setData({
           animationChooser: this.animation.export(),
         })
-      } 
+      }
     },
     choices: Array
   },
@@ -50,13 +52,30 @@ Component({
         count: scope.data.count + 1
       })
     },
-    chooseIt: function(e) {
+    changeMount: function(e){
+      const scope = this;
+      const count = parseInt(e.detail.value) === 0 ? 1 : parseInt(e.detail.value) ;
+      scope.setData({
+        count
+      })
+    },
+    chooseIt: function (e) {
       this.setData({
         index: e.currentTarget.dataset.index,
         choosenSku: e.currentTarget.dataset.sku
       })
     },
-    closePanel: function() {
+    addToCart: function () {
+      const goods = this.data.choices[this.data.index];
+      const count = this.data.count
+      const order = {
+        ...goods, count, selected: false
+      }
+      addUnpaidOrder(order);
+      this.closePanel();
+    },
+
+    closePanel: function () {
       this.triggerEvent('taptouchlayer')
     }
   }

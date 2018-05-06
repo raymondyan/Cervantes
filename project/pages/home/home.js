@@ -1,3 +1,5 @@
+import { onlySetCartNumber } from '../../service/saveOrder'
+
 Page({
   onLoad: function () {
     let scope = this;
@@ -10,6 +12,12 @@ Page({
     }, (err) => {
       console.log(err);
     })
+  },
+  onShow: function() {
+    onlySetCartNumber()
+  },
+  onTabItemTap: function() {
+    onlySetCartNumber()
   }
 });
 

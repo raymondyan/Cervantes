@@ -1,8 +1,31 @@
+<wxs src="../../component/utils/price.wxs" module="price" />
 <view>
   <view bindtap='goToDeliveryIntro' class='deliveryAndChange'>查看物流和退换货说明</view>
-  <view wx:if="{{empty}}" class='emptyCart' bindtap='goToHome'>
+  <view wx:if="{{empty}}" style='height:{{modalHeight}}rpx' class='emptyCart' bindtap='goToHome'>
     <image class='emptyCartImg' src='../../static/cart_empty.png'></image>
     <view class='greeting'>好物已甄选 可前往选购</view>
   </view>
-   <product-section name="澳邮精选" nameEn="AuPost Featured" more="更多精选" products="{{auPostChoices}}" />
+  <view wx:else class='orderList'>
+    <view wx:for="{{myUnpaidOrder}}" wx:key="index" wx:for-item="order" class='order'>
+      <image src='{{order.selected ? "../../static/choose.png" : "../../static/ignore.png" }}' class='icon' data-sku='{{order.sku}}' bindtap='chooseIt'></image>
+      <image src='{{order.imageUrl}}' class='image'></image>
+      <view class='config'>
+        <view class='name'>{{order.name}}</view>
+        <view class='type'>{{order.type}}</view>
+        <view class='adjustAmount'>
+          <view data-sku='{{order.sku}}' class='minus {{order.count == 1 ? "disable" : ""}}' bindtap='{{order.count == 1 ? "" : "minusMount"}}'>-</view>
+          <view class='count'>{{order.count}}</view>
+          <view data-sku='{{order.sku}}' class='add' bindtap='addMount'>+</view>
+        </view>
+      </view>
+      <view class='price'>{{price.formatPrice(order.count * order.price)}}</view>
+    </view>
+    <view class='summary'>
+      <image src='{{pickAll ? "../../static/choose.png" : "../../static/ignore.png" }}' class='icon' data-sku='{{order.sku}}' bindtap='selectAll'></image>
+      <view class='selectAll'>全选</view>
+      <view class='price'>{{price.formatPrice(totalPrice)}}</view>
+      <view class='purchase'>结算</view>
+    </view>
+  </view>
+
 </view>

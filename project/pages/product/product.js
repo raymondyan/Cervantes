@@ -61,6 +61,7 @@ Page({
     productChoices: [
       {
         sku: 1,
+        name:  "温和无痛系列脱毛膏",
         type: "150g * 1",
         imageUrl: "https://img.xiaohongshu.com/items/1346be69826e4cc87e4806e270d7d812@800w_90Q_1x_2o.jpg",
         available: true,
@@ -68,6 +69,7 @@ Page({
       },
       {
         sku: 15,
+        name: "温和无痛系列脱毛膏",
         type: "150g * 2",
         imageUrl: "https://img.xiaohongshu.com/items/630de6a255136f1055948424e22d4a62@800w_90Q_1x_2o.jpg",
         available: true,
@@ -75,6 +77,7 @@ Page({
       },
       {
         sku: 16,
+        name: "温和无痛系列脱毛膏",
         type: "150g * 3",
         imageUrl: "https://img.xiaohongshu.com/items/88846e1abdac8e1b32777278901d6676@800w_90Q_1x_2o.jpg",
         available: false,

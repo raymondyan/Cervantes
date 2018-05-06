@@ -19,13 +19,13 @@
       <view class='label'>数量</view>
       <view class='adjustAmount'>
         <view class='minus {{count == 1 ? "disable" : ""}}' bindtap='{{count == 1 ? "" : "minusMount"}}'>-</view>
-        <view class='count'>{{count}}</view>
+        <input class='count' value='{{count}}' adjust-position="true" type="number" cursor-spacing="10" bindblur="changeMount"></input>
         <view class='add' bindtap='addMount'>+</view>
       </view>
     </view>
     <view class='btnGroup'>
-      <view class='btn'>加入购物篮</view>
-      <view class='btn black'>前往结账</view>
+      <view class='btn' bindtap='addToCart'>加入购物篮</view>
+      <view class='btn black' bind='goToCheckOut'>前往结账</view>
     </view>
   </view>
 </view>

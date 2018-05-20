@@ -1,2 +1,26 @@
-<!--pages/lifestyle/lifestyle.wxml-->
-<text>pages/lifestyle/lifestyle.wxml</text>
+ <view class='sectionTitle'>
+  精选博客</view>
+<view class='swiperBox'>
+  <swiper bindchange="changeSlides" circular="true" autoplay="true" interval="4000">
+    <block wx:for="{{blogs}}" wx:key="index" wx:for-item="blog">
+      <swiper-item>
+        <image mode='aspectFill' src="{{blog}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='swiper-dots'>
+    <view class="{{ dot == current ? 'swiper-dot swiper-dot-active' : 'swiper-dot' }}"  wx:for="{{dots}}" wx:for-item="dot" wx:key="index"></view>
+  </view>
+</view>
+
+<view class='sectionTitle'>达人直播</view>
+<scroll-view class='livesScroll' scroll-x style="width: 750rpx; height: 260rpx">
+  <view class='live' bindtap='goToLive' wx:for="{{lives}}" wx:key="index" wx:for-item="live">
+    <view class='liver'>
+      <image class='avatar' src='{{live.avatar}}'></image>
+      <view class="name">{{live.name}}</view>
+    </view>
+    <image class='screenShot' mode='widthFix' src='{{live.image}}'></image>
+    <view class='title'>{{live.title}}</view>
+  </view>
+</scroll-view> 

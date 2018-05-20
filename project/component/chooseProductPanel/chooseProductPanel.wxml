@@ -25,7 +25,7 @@
     </view>
     <view class='btnGroup'>
       <view class='btn' bindtap='addToCart'>加入购物篮</view>
-      <view class='btn black' bind='goToCheckOut'>前往结账</view>
+      <view class='btn black' bindtap='goToCheckOut'>前往结账</view>
     </view>
   </view>
 </view>

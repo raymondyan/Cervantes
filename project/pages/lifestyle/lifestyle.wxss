@@ -1,1 +1,112 @@
-/* pages/lifestyle/lifestyle.wxss */
+page {
+  background-color: #000;
+}
+
+.sectionTitle {
+  color: #f5f5f5;
+  text-align: center;
+  font-size: 34rpx;
+  margin-top: 20rpx;
+}
+
+.swiperBox image {
+  width: 720rpx;
+  height: 440rpx;
+  margin-top: 10rpx;
+}
+
+.swiperBox swiper-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiperBox swiper {
+  height: 500rpx;
+  position: relative;
+}
+
+.counter {
+  display: inline-block;
+  height: 32rpx;
+  line-height: 32rpx;
+  width: 66rpx;
+  border-radius: 16rpx;
+  font-size: 22rpx;
+  text-align: right;
+  padding-right: 16rpx;
+  color: white;
+  background-color: rgba(30, 30, 30, 0.85);
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+}
+
+.swiper-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+
+.swiper-dot {
+  width: 10px;
+  height: 3px;
+  background: #f5f5f5;
+  border-radius: 3px;
+}
+
+.swiper-dot-active {
+  background: #dc2229;
+  width: 15px;
+  transition: width 0.1s linear;
+}
+
+.swiper-dot:not(:last-child) {
+  margin-right: 15rpx;
+}
+
+.livesScroll {
+  white-space: nowrap;
+  padding-top: 40rpx;
+  padding-bottom: 20rpx;
+}
+
+.live {
+  display: inline-block;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.live .liver {
+  display: flex;
+  color: #f5f5f5;
+  align-items: center;
+  font-size: 22rpx;
+}
+
+.live .liver .avatar {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+
+.live .screenShot {
+  width: 280rpx;
+  border-radius: 10rpx;
+  margin-top: 10rpx;
+}
+
+.live .title{
+  color: #f5f5f5;
+  width: 280rpx;
+  font-size: 22rpx;
+  font-weight: 300;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-all;
+}

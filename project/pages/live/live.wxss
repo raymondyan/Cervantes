@@ -1,0 +1,155 @@
+page {
+  background-color: #222;
+}
+
+#player {
+  width: 750rpx;
+  height: 420rpx;
+}
+
+.mc {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  width: 710rpx;
+  margin-left: 20rpx;
+  color: #efefef;
+  border-bottom: 1px #2e2e2e solid;
+}
+
+.mc .avatar {
+  height: 64rpx;
+  width: 64rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+
+.mc .name {
+  font-size: 22rpx;
+}
+
+.mc .audience {
+  font-size: 20rpx;
+}
+
+.mc .follow {
+  position: absolute;
+  right: 20rpx;
+  background-color: #dc2229;
+  color: white;
+  padding: 0 30rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 20rpx;
+  font-size: 20rpx;
+}
+
+.tabs {
+  display: flex;
+  height: 70rpx;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: #aaa;
+}
+
+.tab {
+  width: 150rpx;
+  text-align: center;
+  font-weight: 300;
+}
+
+.tab.active {
+  color: #dc2229;
+  font-weight: 600;
+}
+
+.contentSwiper swiper-item .container {
+  background-color: #1a1a1a;
+  width: 670rpx;
+  margin-left: 20rpx;
+  padding: 20rpx;
+  height: 100%;
+  color: #ccc;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.danmu {
+  margin: 15rpx 0;
+  font-size: 26rpx;
+}
+
+.danmu .name {
+  color: #888;
+}
+
+.danmu .name .content {
+  color: #eee;
+}
+
+.getInfo {
+  width: 670rpx;
+  height: 60rpx;
+  background-color: #1a1a1a;
+  color:#ccc;
+  position: absolute;
+  bottom: 10rpx;
+  font-size: 26rpx;
+  border: 1px #2e2e2e solid;
+}
+
+.post {
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 670rpx;
+  position: absolute;
+  bottom: 0;
+  background-color: #1a1a1a;
+  border-top: 1px #2e2e2e solid;
+  font-size: 26rpx;
+}
+
+.item {
+  display: flex;
+  background-color: white;
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  align-items: center;
+}
+
+.item .thumbnail {
+  height: 150rpx;
+  width: 150rpx;
+}
+
+.item .profile {
+  width: 350rpx;
+  margin-left: 20rpx;
+}
+
+.item .profile .name {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 300;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.item .profile .price {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  font-weight: 300;
+  color: #dc2229;
+}
+
+.item .buy {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 30rpx;
+}

@@ -5,12 +5,13 @@
     "pages/my/my",
     "pages/lifestyle/lifestyle",
     "pages/category/category",
-    "pages/product/product"
+    "pages/product/product",
+    "pages/live/live"
   ],
   "tabBar": {
     "color": "#bfbfbf",
     "selectedColor": "#dc2229",
-    "borderStyle": "black",
+    "borderStyle": "white",
     "backgroundColor": "#000",
     "list": [
       {

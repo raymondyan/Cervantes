@@ -1,0 +1,128 @@
+.orderList {
+  width: 690rpx;
+  margin-left: 12rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  height: 400px;
+  background-color: white;
+  position: fixed;
+  bottom: -400px;
+  z-index: 1002;
+}
+
+.orderList .label {
+  display: block;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  color: #666;
+  position: relative;
+  text-align: center;
+}
+
+.orderList .closePanelIcon {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+}
+
+
+.orderList .label::before, .orderList .label::after {
+  content: '';
+  position: absolute;
+  top: 52%;
+  background: #666;
+  width: 80rpx;
+  height: 1px;
+}
+
+.orderList .label::before {
+  left: 30%; 
+}
+
+.orderList .label::after {
+  right: 30%;
+}
+
+.orderListPanel .opacityLayer {
+  width: 750rpx;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  transition: background-color 0.3s linear;
+}
+
+.orderListPanel .opacityLayer.invisible {
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.2s linear;
+}
+
+.orderList .order {
+  display: flex;
+  align-items: center;
+}
+
+.orderList .order:not(:last-child) {
+  border-bottom: 1rpx #efefef solid;
+}
+
+.orderList .order .thumbnail {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.orderList .order .profile {
+  margin-left: 40rpx;
+}
+
+.orderList .order .detail {
+  display: flex;
+  flex-direction: row;
+}
+
+.orderList .order .name {
+  font-size: 30rpx;
+  color: #333;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.orderList .order .type, .orderList .order .count {
+  font-size: 26rpx;
+  color: #333;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.orderList .order .count {
+  margin-left: 30rpx;
+}
+
+.orderList .order .price {
+  font-size: 30rpx;
+  font-weight: 300;
+  color: #dc2229;
+}
+
+.cartBtn {
+  position: absolute;
+  bottom: 20rpx;
+  font-size: 30rpx;
+  background-color: #444;
+  color: white;
+  width: 690rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

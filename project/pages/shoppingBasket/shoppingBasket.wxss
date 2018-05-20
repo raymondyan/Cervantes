@@ -8,7 +8,7 @@
   line-height: 70rpx;
   color: #dc2229;
   font-size: 30rpx;
-  font-weight: 300;
+  font-weight: 300; 
   border-bottom: 1px #cdcdcd solid;
   z-index: 1006;
 }

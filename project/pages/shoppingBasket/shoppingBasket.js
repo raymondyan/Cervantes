@@ -10,7 +10,6 @@ Page({
       url: '../../pages/home/home',
     })
   },
-
   onShow: function () {
     wx.removeTabBarBadge({
       index: 3

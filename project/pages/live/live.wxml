@@ -1,0 +1,52 @@
+<wxs src="../../component/utils/price.wxs" module="price" />
+<live-player id="player" src="rtmp://24052.liveplay.myqcloud.com/live/24052_24c11534bd" autoplay object-fit="fillCrop" background-mute="true" />
+
+<view class='mc'>
+  <image class='avatar' src='https://img.xiaohongshu.com/avatar/5ace0797d2c8a55c1132451d.jpg@80w_80h_90q_1e_1c_1x.jpg'></image>
+  <view>
+    <view class='name'>CC小姐姐_SYD</view>
+    <view class='audience'>1024</view>
+  </view>
+  <view class='follow'>关注</view>
+</view>
+
+<view class='tabs'>
+  <view data-tab='0' bindtap='jumpToTab' class='tab {{current == 0?"active":""}}'>闲聊</view>
+  <view data-tab='1' bindtap='jumpToTab' class='tab {{current == 1?"active":""}}'>清单</view>
+</view>
+
+<swiper class='contentSwiper' style="height:{{interactHeight}}rpx" bindchange="changeSection" current="{{current}}">
+  <swiper-item>
+    <view class='container'>
+      <scroll-view scroll-y style="height: {{interactHeight-100}}rpx;" scroll-into-view="{{ toView }}">
+        <view id='danmu_{{danmu.id}}' class='danmu' wx:for="{{danmus}}" wx:for-item="danmu" wx:key="index">
+          <view class='name'>{{danmu.name}} :
+            <text class='content'>{{danmu.content}}</text>
+          </view>
+        </view>
+      </scroll-view>
+      <view>
+        <input wx:if="{{name}}" focus='{{focus}}' value='{{emptyValue}}' confirm-type="send" bindblur="createDanmu" class='post' placeholder="来说一句"></input>
+        <view wx:else>
+          <button class='getInfo' wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">来说一句</button>
+        </view>
+      </view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view class='container'>
+      <scroll-view scroll-y style="height: {{interactHeight-40}}rpx;">
+        <view class='product' wx:for="{{products}}" wx:for-item="product" wx:key="index">
+          <view class='item'>
+            <image src='{{product.imageUrl}}' class='thumbnail'></image>
+            <view class='profile'>
+              <view class='name'>{{product.name}}</view>
+              <view class='price'>{{price.formatPrice(product.price)}}</view>
+            </view>
+            <image src='../../static/cart_on.png' class='buy'></image>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </swiper-item>
+</swiper>

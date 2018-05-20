@@ -1,7 +1,9 @@
+import { loadUnpaidOrder } from '../../service/saveOrder'
 Page({
   data: {
     count: 1,
     showChooseProduct: -1,
+    showCartPanel: -1,
     productImages: [
       "https://img.xiaohongshu.com/items/1346be69826e4cc87e4806e270d7d812@800w_90Q_1x_2o.jpg",
       "https://img.xiaohongshu.com/items/05116294ecbc225485b987e664c6c2f5@800w_90Q_1x_2o.jpg",
@@ -61,7 +63,7 @@ Page({
     productChoices: [
       {
         sku: 1,
-        name:  "温和无痛系列脱毛膏",
+        name: "温和无痛系列脱毛膏",
         type: "150g * 1",
         imageUrl: "https://img.xiaohongshu.com/items/1346be69826e4cc87e4806e270d7d812@800w_90Q_1x_2o.jpg",
         available: true,
@@ -85,10 +87,39 @@ Page({
       },
     ]
   },
+  onLoad: function () {
+    this.loadUnpaidOrder();
+  },
+  goToCart: function () {
+    wx.switchTab({
+      url: '../shoppingBasket/shoppingBasket',
+    })
+  },
   switchChoosePanel: function () {
     const scope = this;
     scope.setData({
-        showChooseProduct: scope.data.showChooseProduct * -1
+      showCartPanel: -1,
+      showChooseProduct: scope.data.showChooseProduct * -1
     })
-  }
+  },
+  switchCartPanel: function(){
+    const scope = this;
+    scope.setData({
+      showCartPanel: scope.data.showCartPanel * -1
+    })
+  },
+  checkHasItemInBasket: function (myUnpaidOrder) {
+    let scope = this;
+    scope.setData({
+      empty: myUnpaidOrder.length === 0
+    })
+  },
+  loadUnpaidOrder: function () {
+    const scope = this;
+    const myUnpaidOrder = loadUnpaidOrder() || []
+    scope.checkHasItemInBasket(myUnpaidOrder)
+    scope.setData({
+      myUnpaidOrder
+    })
+  },
 })

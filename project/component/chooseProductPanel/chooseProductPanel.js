@@ -65,7 +65,8 @@ Component({
         choosenSku: e.currentTarget.dataset.sku
       })
     },
-    addToCart: function () {
+
+    addProductToCart: function() {
       const goods = this.data.choices[this.data.index];
       const count = this.data.count
       const order = {
@@ -73,6 +74,21 @@ Component({
       }
       addUnpaidOrder(order);
       this.closePanel();
+    },
+
+    addToCart: function () {
+      this.addProductToCart();
+      this.triggerEvent('addtocart')
+      wx.showToast({
+        title: '添加成功',
+        icon: 'success',
+        duration: 2000
+      })
+    },
+
+    goToCheckOut: function(){
+      this.addProductToCart();
+      this.triggerEvent('gotocart')
     },
 
     closePanel: function () {

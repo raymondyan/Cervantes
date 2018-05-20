@@ -2,7 +2,7 @@
   width: 690rpx;
   margin-left: 12rpx;
   padding: 20rpx;
-  border-radius: 20rpx;
+  border-radius: 30rpx;
   height: 400px;
   background-color: white;
   position: fixed;
@@ -120,9 +120,11 @@
   font-size: 30rpx;
   background-color: #444;
   color: white;
-  width: 690rpx;
+  width: 600rpx;
+  border-radius: 6rpx;
   height: 80rpx;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left:45rpx;
 }

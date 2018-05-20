@@ -9,7 +9,7 @@ Component({
     goToProduct: function(e) {
       const sku = e.currentTarget.dataset.sku;
       wx.navigateTo({
-        url: '../product/product?sku=' + sku,
+        url: '../product/product?skuId=' + '5b016e5a4648023bb4be971b',
         success: function(res) {},
         fail: function(res) {},
         complete: function(res) {},

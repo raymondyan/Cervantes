@@ -7,22 +7,22 @@
   </view>
   <view wx:else class='orderList'>
     <view wx:for="{{myUnpaidOrder}}" wx:key="index" wx:for-item="order" class='order'>
-      <image src='{{order.selected ? "../../static/choose.png" : "../../static/ignore.png" }}' class='icon' data-sku='{{order.sku}}' bindtap='chooseIt'></image>
-      <image src='{{order.imageUrl}}' class='image'></image>
+      <image src='{{order.selected ? "../../static/choose.png" : "../../static/ignore.png" }}' class='icon' data-sku='{{order.id}}' bindtap='chooseIt'></image>
+      <image src='{{order.images[0]}}' class='image'></image>
       <view class='config'>
         <view class='name'>{{order.name}}</view>
         <view class='type'>{{order.type}}</view>
         <view class='adjustAmount'>
-          <view data-sku='{{order.sku}}' class='minus {{order.count == 1 ? "disable" : ""}}' bindtap='{{order.count == 1 ? "" : "minusMount"}}'>-</view>
+          <view data-sku='{{order.id}}' class='minus {{order.count == 1 ? "disable" : ""}}' bindtap='{{order.count == 1 ? "" : "minusMount"}}'>-</view>
           <view class='count'>{{order.count}}</view>
-          <view data-sku='{{order.sku}}' class='add' bindtap='addMount'>+</view>
+          <view data-sku='{{order.id}}' class='add' bindtap='addMount'>+</view>
           <view class='price'>{{price.formatPrice(order.count * order.price)}}</view>
         </view>
       </view>
-      <image src='../../static/delete.png' class='delete' bindtap='deleteItem' data-sku='{{order.sku}}'></image>
+      <image src='../../static/delete.png' class='delete' bindtap='deleteItem' data-sku='{{order.id}}'></image>
     </view>
     <view class='summary'>
-      <image src='{{pickAll ? "../../static/choose.png" : "../../static/ignore.png" }}' class='icon' data-sku='{{order.sku}}' bindtap='selectAll'></image>
+      <image src='{{pickAll ? "../../static/choose.png" : "../../static/ignore.png" }}' class='icon' data-sku='{{order.id}}' bindtap='selectAll'></image>
       <view class='selectAll'>全选</view>
       <view class='price'>{{price.formatPrice(totalPrice)}}</view>
       <view class='purchase'>结算</view>

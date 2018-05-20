@@ -11,14 +11,14 @@ Component({
         current: e.detail.current
       })
     },
-    fetchProducts: function (collection) {
+    fetchSkus: function (collection) {
       let scope = this;
-      let tableID = 34923;
+      let tableID = 37225;
       let query = new wx.BaaS.Query();
-      query = query.in('sku', collection.productIds);
-      const Product = new wx.BaaS.TableObject(tableID);
-      Product.setQuery(query).find().then( (res) => {
-        collection.products = res.data.objects;
+      query = query.in('id', collection.skus);
+      const Sku = new wx.BaaS.TableObject(tableID);
+      Sku.setQuery(query).find().then( (res) => {
+        collection.skus = res.data.objects;
         scope.setData({
           collection,
           dots: Array.from({length: res.data.objects.length + 1}, (x, i) => i)
@@ -30,7 +30,7 @@ Component({
     goToProduct: function (e) {
       const sku = e.currentTarget.dataset.sku;
       wx.navigateTo({
-        url: '../product/product?sku=' + sku,
+        url: '../product/product?skuId=' + sku,
         success: function (res) { },
         fail: function (res) { },
         complete: function (res) { },
@@ -44,7 +44,7 @@ Component({
     let Collection = new wx.BaaS.TableObject(tableID);
 
     Collection.get(recordID).then( (res) => {
-      scope.fetchProducts(res.data)
+      scope.fetchSkus(res.data)
     }, (err) => {
       console.log(err);
     })

@@ -16,16 +16,16 @@
     </swiper-item>
 
     <view class='brandSwiperSection'>
-      <block wx:for="{{collection.products}}" wx:key="index" wx:for-item="product">
+      <block wx:for="{{collection.skus}}" wx:key="index" wx:for-item="sku">
         <swiper-item>
-          <view class="product" data-sku='{{product.sku}}' bindtap="goToProduct">
-            <image class='image' mode='aspectFit' src='{{product.imageUrl}}'></image>
+          <view class="product" data-sku='{{sku.id}}' bindtap="goToProduct">
+            <image class='image' mode='aspectFit' src='{{sku.images[0]}}'></image>
             <view class='detail'>
-              <view wx:if="{{product.tag}}" class='tag'># {{product.tag}}</view>
-              <view class='name'>{{product.name}}</view>
+              <view wx:if="{{sku.tags}}" class='tag'># {{sku.tags[0]}}</view>
+              <view class='name'>{{sku.name}}</view>
               <view class='priceBlock'>
-                <view class='price'>{{price.formatPrice(product.price)}}</view>
-                <view class='priceOld'>{{price.formatPrice(product.priceOld)}}</view>
+                <view class='price'>{{price.formatPrice(sku.price)}}</view>
+                <view wx:if="{{sku.priceOld}}" class='priceOld'>{{price.formatPrice(sku.priceOld)}}</view>
               </view>
               <view class='purchaseBtn'>选购</view>
             </view>

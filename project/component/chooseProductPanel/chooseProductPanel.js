@@ -13,7 +13,14 @@ Component({
         })
       }
     },
-    choices: Array
+    productId: {
+      type: String,
+      value: '',
+      observer: function (newVal, oldVal) {
+        let scope = this;
+        scope.loadSkus(newVal)
+      }
+    },
   },
   data: {
     count: 1,
@@ -22,9 +29,6 @@ Component({
   },
   attached: function () {
     let scope = this;
-    scope.setData({
-      choosenSku: scope.data.choices[0].sku
-    })
     const animation = wx.createAnimation({
       duration: 400,
       timingFunction: 'ease'
@@ -44,6 +48,19 @@ Component({
       const scope = this;
       scope.setData({
         count: scope.data.count - 1
+      })
+    },
+    loadSkus: function (productId) {
+      const scope = this;
+      let tableID = 37225;
+      let query = new wx.BaaS.Query();
+      query.compare('productId', '=', productId)
+      let Sku = new wx.BaaS.TableObject(tableID)
+      Sku.setQuery(query).select(['id', 'type', 'name', 'price', 'images', 'stock']).find().then(res => {
+        const skus = res.data.objects;
+        scope.setData({ skus, choosenSku: skus[0].id })
+      }, err => {
+        console.log(err)
       })
     },
     addMount: function () {
@@ -67,7 +84,7 @@ Component({
     },
 
     addProductToCart: function() {
-      const goods = this.data.choices[this.data.index];
+      const goods = this.data.skus[this.data.index];
       const count = this.data.count
       const order = {
         ...goods, count, selected: false

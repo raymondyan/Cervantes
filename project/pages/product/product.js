@@ -4,90 +4,10 @@ Page({
     count: 1,
     showChooseProduct: -1,
     showCartPanel: -1,
-    productImages: [
-      "https://img.xiaohongshu.com/items/1346be69826e4cc87e4806e270d7d812@800w_90Q_1x_2o.jpg",
-      "https://img.xiaohongshu.com/items/05116294ecbc225485b987e664c6c2f5@800w_90Q_1x_2o.jpg",
-      "https://img.xiaohongshu.com/items/0624b3d016213470ecc5be0f447cbb22@800w_90Q_1x_2o.jpg"
-    ],
-    profile: {
-      name: "一抹一擦净洁滑白 · 温和无痛系列脱毛膏 150g",
-      tag: "温和脱毛清凉一夏",
-      price: 89,
-      priceold: 99,
-      brand: "Nair"
-    },
-    brandProfile: {
-      name: "Nair",
-      imageUrl: "https://cloud-minapp-13706.cloud.ifanrusercontent.com/1fDsRoWqTAUxPSap.jpg"
-    },
-    configs: [
-      {
-        props: "商品名称",
-        value: "温和无痛系列脱毛膏"
-      },
-      {
-        props: "重量",
-        value: "150g"
-      },
-      {
-        props: "品牌",
-        value: "Nair"
-      },
-      {
-        props: "是否为特殊用途化妆品",
-        value: "否"
-      },
-      {
-        props: "产地",
-        value: "澳大利亚"
-      },
-      {
-        props: "规格类型",
-        value: "正常规格"
-      },
-      {
-        props: "功效",
-        value: "脱毛"
-      },
-    ],
-    details: [
-      "http://img30.360buyimg.com/popWaterMark/jfs/t16222/259/2654257875/139294/6c5fa259/5ac1eb06N20654780.jpg",
-      "http://img30.360buyimg.com/popWaterMark/jfs/t16885/133/1238449157/133880/d8a633a/5ac1eb06N0781c30c.jpg",
-      "http://img30.360buyimg.com/popWaterMark/jfs/t18841/86/1243923558/213232/fa157f47/5ac1eb06Nc18d212e.jpg",
-      "http://img30.360buyimg.com/popWaterMark/jfs/t19516/68/1196546892/214843/f2fbec94/5ac1eb07Nd592e659.jpg",
-      "http://img30.360buyimg.com/popWaterMark/jfs/t17641/294/1205246507/203956/7528a330/5ac1eb07N2702962f.jpg",
-      "http://img30.360buyimg.com/popWaterMark/jfs/t16675/110/1317602838/174766/3f25f8bd/5ac1eb06N4db96d68.jpg",
-      "http://img30.360buyimg.com/popWaterMark/jfs/t18628/187/1239857412/196224/cfd61865/5ac1eb06N090b678e.jpg"
-
-    ],
-    productChoices: [
-      {
-        sku: 1,
-        name: "温和无痛系列脱毛膏",
-        type: "150g * 1",
-        imageUrl: "https://img.xiaohongshu.com/items/1346be69826e4cc87e4806e270d7d812@800w_90Q_1x_2o.jpg",
-        available: true,
-        price: 89
-      },
-      {
-        sku: 15,
-        name: "温和无痛系列脱毛膏",
-        type: "150g * 2",
-        imageUrl: "https://img.xiaohongshu.com/items/630de6a255136f1055948424e22d4a62@800w_90Q_1x_2o.jpg",
-        available: true,
-        price: 109
-      },
-      {
-        sku: 16,
-        name: "温和无痛系列脱毛膏",
-        type: "150g * 3",
-        imageUrl: "https://img.xiaohongshu.com/items/88846e1abdac8e1b32777278901d6676@800w_90Q_1x_2o.jpg",
-        available: false,
-        price: 89
-      },
-    ]
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    const skuId = options.skuId;
+    this.loadSku(skuId);
     this.loadUnpaidOrder();
   },
   goToCart: function () {
@@ -102,7 +22,7 @@ Page({
       showChooseProduct: scope.data.showChooseProduct * -1
     })
   },
-  switchCartPanel: function(){
+  switchCartPanel: function () {
     const scope = this;
     scope.setData({
       showCartPanel: scope.data.showCartPanel * -1
@@ -112,6 +32,68 @@ Page({
     let scope = this;
     scope.setData({
       empty: myUnpaidOrder.length === 0
+    })
+  },
+  loadSku: function (skuId) {
+    const scope = this;
+    let tableID = 37225;
+    let recordID = skuId;
+    let Sku = new wx.BaaS.TableObject(tableID)
+    Sku.select(['images', 'name', 'price', 'priceOld', 'productId', 'tags']).get(recordID).then(res => {
+      const profile = res.data;
+      scope.loadDetail(profile.productId);
+      scope.loadBrand(profile.productId);
+      scope.loadConfig(profile.productId);
+      scope.setData({ profile, productId: profile.productId })
+    }, err => {
+      console.log(err)
+    })
+  },
+
+  loadDetail: function (productId) {
+    const scope = this;
+    let tableID = 37220;
+    let query = new wx.BaaS.Query();
+    query.compare('productId', '=', productId)
+    let Detail = new wx.BaaS.TableObject(tableID)
+    Detail.setQuery(query).find().then(res => {
+      const details = res.data.objects[0].details;
+      scope.setData({ details })
+    }, err => {
+      console.log(err)
+    })
+  },
+  loadConfig: function (productId) {
+    const scope = this;
+    let tableID = 37219;
+    let query = new wx.BaaS.Query();
+    query.compare('productId', '=', productId)
+    let Config = new wx.BaaS.TableObject(tableID)
+    Config.setQuery(query).select(['props', 'value']).find().then(res => {
+      const configs = res.data.objects;
+      scope.setData({ configs })
+    }, err => {
+      console.log(err)
+    })
+  },
+  loadBrand: function (productId) {
+    const scope = this;
+    let tableID = 37224;
+    let recordID = productId;
+    let Product = new wx.BaaS.TableObject(tableID)
+    Product.select(['brandId']).get(recordID).then(res => {
+      const brandId = res.data.brandId;
+      let brandTableID = 34910;
+      let recordID = brandId;
+      let Brand = new wx.BaaS.TableObject(brandTableID)
+      Brand.select(['name', 'imageUrl']).get(recordID).then(res => {
+        const brand = res.data;
+        scope.setData({ brand })
+      }, err => {
+        console.log(err)
+      })
+    }, err => {
+      console.log(err)
     })
   },
   loadUnpaidOrder: function () {

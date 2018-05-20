@@ -57,7 +57,7 @@ Page({
     const sku = e.currentTarget.dataset.sku;
     let myUnpaidOrder = this.data.myUnpaidOrder;
     myUnpaidOrder = _.map(myUnpaidOrder, (o) => {
-      if (o.sku == sku) {
+      if (o.id == sku) {
         o.selected = !o.selected;
         return o
       } else {
@@ -80,7 +80,7 @@ Page({
         if (res.confirm) {
           const sku = e.currentTarget.dataset.sku;
           let myUnpaidOrder = scope.data.myUnpaidOrder;
-          _.remove(myUnpaidOrder, (o) => o.sku == sku)
+          _.remove(myUnpaidOrder, (o) => o.id == sku)
           scope.setData({
             myUnpaidOrder
           })
@@ -123,7 +123,7 @@ Page({
     const sku = e.currentTarget.dataset.sku;
     let myUnpaidOrder = this.data.myUnpaidOrder;
     myUnpaidOrder = _.map(myUnpaidOrder, (o) => {
-      if (o.sku == sku) {
+      if (o.id == sku) {
         o.count = o.count + 1;
         return o
       } else {
@@ -141,7 +141,7 @@ Page({
     const sku = e.currentTarget.dataset.sku;
     let myUnpaidOrder = this.data.myUnpaidOrder;
     myUnpaidOrder = _.map(myUnpaidOrder, (o) => {
-      if (o.sku == sku) {
+      if (o.id == sku) {
         o.count = o.count - 1;
         return o
       } else {

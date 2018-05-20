@@ -8,6 +8,17 @@ Component({
       this.setData({
         current: e.detail.current
       })
+    },
+    goToDetail: function(e) {
+      const slide = this.data.slides[e.currentTarget.dataset.index];
+      if (slide.type === 'product') {
+        wx.navigateTo({
+          url: '../product/product?skuId=' + slide.targetId,
+          success: function (res) { },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      }
     }
   },
 

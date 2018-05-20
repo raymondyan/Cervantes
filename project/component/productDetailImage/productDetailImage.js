@@ -1,6 +1,14 @@
 Component({
   properties: {
-    images: Array
+    images: {
+      type: Array,
+      observer: function (newVal, oldVal) {
+        let scope = this;
+        scope.setData({
+          dots: Array.from({ length: newVal.length }, (x, i) => i)
+        })
+      }
+    },
   },
 
   data: {
@@ -15,10 +23,4 @@ Component({
     }
   },
 
-  attached: function () {
-    let scope = this;
-    scope.setData({
-      dots: Array.from({ length: scope.data.images.length }, (x, i) => i)
-    })
-  }
 })

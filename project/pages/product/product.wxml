@@ -1,12 +1,12 @@
-<product-slide images="{{productImages}}" />
+<product-slide images="{{profile.images}}" />
 <product-profile profile="{{profile}}" />
-<product-picker showPanel="{{showChooseProduct}}" choices="{{productChoices}}" bindaddtocart="loadUnpaidOrder" bindgotocart="goToCart" bindtaptouchlayer="switchChoosePanel" />
+<product-picker showPanel="{{showChooseProduct}}" productId="{{productId}}" bindaddtocart="loadUnpaidOrder" bindgotocart="goToCart" bindtaptouchlayer="switchChoosePanel" />
 
 <mini-basket showPanel="{{showCartPanel}}" orders="{{myUnpaidOrder}}" bindtaptouchlayer="switchCartPanel" bindgotocart="goToCart" />
 
 
 <view class='brand'>
-  <image mode='aspectFit' src='{{brandProfile.imageUrl}}'></image>
+  <image mode='aspectFit' src='{{brand.imageUrl}}'></image>
   <view class='tips'>进入品牌主页</view>
 </view>
 

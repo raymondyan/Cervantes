@@ -6,7 +6,8 @@
     "pages/lifestyle/lifestyle",
     "pages/category/category",
     "pages/product/product",
-    "pages/live/live"
+    "pages/live/live",
+    "pages/productList/productList"
   ],
   "tabBar": {
     "color": "#bfbfbf",

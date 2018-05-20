@@ -31,10 +31,10 @@ const updateUnpaidOrder = (orders) => {
 };
 
 const mergeOrder = (orderList, newOrder) => {
-  const ret = _.find(orderList, (o) => o.sku == newOrder.sku)
+  const ret = _.find(orderList, (o) => o.id == newOrder.id)
   if (ret) {
     const orders = _.map(orderList, function (o) {
-      if (o.sku == newOrder.sku) {
+      if (o.id == newOrder.id) {
         o.count = o.count + newOrder.count;
         return o
       } else {

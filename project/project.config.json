@@ -59,10 +59,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "shangp",
 					"pathName": "pages/product/product",
-					"query": ""
+					"query": "skuId=5b016a3c4648023bb8be96fd"
 				},
 				{
 					"id": -1,
@@ -74,6 +74,12 @@
 					"id": -1,
 					"name": "直播",
 					"pathName": "pages/live/live",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品列表",
+					"pathName": "pages/productList/productList",
 					"query": ""
 				}
 			]

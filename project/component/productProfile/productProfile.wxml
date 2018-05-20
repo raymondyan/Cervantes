@@ -1,7 +1,9 @@
 <wxs src="../utils/price.wxs" module="price" />
 <view class='productProfile'>
-  <view class='tag'># {{profile.tag}}</view>
+  <view wx:if="{{profile.tags}}" class='tags'>
+    <view class='tag' wx:for="{{profile.tags}}" wx:key="index" wx:for-item="tag"># {{tag}}</view>
+  </view>
   <view class='name'>{{profile.name}}</view>
   <view class='price'>{{price.formatPrice(profile.price)}}</view>
-  <view class='priceOld'>{{price.formatPrice(profile.priceold)}}</view>
+  <view wx:if="{{profile.priceOld}}" class='priceOld'>{{price.formatPrice(profile.priceOld)}}</view>
 </view>

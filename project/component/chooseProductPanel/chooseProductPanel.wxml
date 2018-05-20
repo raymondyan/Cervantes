@@ -3,15 +3,15 @@
   <view wx:if="{{showPanel == 1}}" bindtap='{{showPanel == 1 ? "closePanel" : ""}}'  catchtouchmove='{{showPanel == 1 ? "true" : ""}}'  class='opacityLayer {{showPanel == 1 ? "" : "invisible"}}' style='height: {{modalHeight}}rpx'></view>
   <view animation="{{animationChooser}}" catchtouchmove='true' class='panel'>
     <view class='productThumbnail'>
-      <image class="thumbnail"  src='{{choices[index].imageUrl}}'></image>
+      <image class="thumbnail"  src='{{skus[index].images[0]}}'></image>
     </view>
     <image class='closePanelIcon' bindtap='closePanel' src='../../static/close.png'></image>
-    <view class='price'>{{price.formatPrice(choices[index].price)}}</view>
+    <view class='price'>{{price.formatPrice(skus[index].price)}}</view>
     <view class='option'>
       <view class='label'>规格</view>
       <view class='choices'>
-        <block wx:for="{{choices}}" wx:key="index" wx:for-item="choice">
-          <view class='item {{choice.sku == choosenSku ? "active" : ""}} {{choice.available ? "" : "out"}}' data-sku='{{choice.sku}}' data-index='{{index}}' bindtap='{{choice.available ? "chooseIt" : ""}}'>{{choice.type}}</view>
+        <block wx:for="{{skus}}" wx:key="index" wx:for-item="sku">
+          <view class='item {{sku.id == choosenSku ? "active" : ""}} {{sku.stock > 0 ? "" : "out"}}' data-sku='{{sku.id}}' data-index='{{index}}' bindtap='{{sku.stock > 0 ? "chooseIt" : ""}}'>{{sku.type}}</view>
         </block>
       </view>
     </view>

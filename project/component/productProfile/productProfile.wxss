@@ -8,6 +8,14 @@
   border-bottom: 10rpx #eee solid;
 }
 
+.productProfile .tags {
+  display: flex;
+  width: 70%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .productProfile .tag {
   display: inline-block;
   font-size: 26rpx;
@@ -17,6 +25,9 @@
   line-height: 45rpx;
   color: #fff;
   background-color: #000;
+  margin-right: 15rpx;
+  margin-left: 15rpx;
+  margin-bottom: 20rpx;
 }
 
 .productProfile .name {

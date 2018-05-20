@@ -3,7 +3,7 @@
   <swiper bindchange="changeSlides" circular="true" autoplay="true" interval="4000">
     <block wx:for="{{slides}}" wx:key="index" wx:for-item="slide">
       <swiper-item>
-        <image mode='aspectFill' src="{{slide.imageUrl}}" class="slide-image" />
+        <image data-index='{{index}}' bindtap='goToDetail' mode='aspectFill' src="{{slide.imageUrl}}" class="slide-image" />
       </swiper-item>
     </block>
   </swiper>
